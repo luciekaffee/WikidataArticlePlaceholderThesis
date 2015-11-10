@@ -7,10 +7,29 @@
 
 \maketitle
 
+\section{Dedication}
+
+\section{Abstract}
+
+\section{Disclaimer}
+
+\section{Table of content \& list of figures \& tables}
+
+\section {Glossary}
+
 \section{Introduction}
 
+\section{Fundamentals}
 \subsection{To Wikipedia}
 \subsection{To Wikidata}
+
+\section{Previous work}
+\begin{itemize}
+\item Reseanator
+\item itwiki (Search)
+\item Infoboxes
+\item ruwiki (connecting to Wikidata)
+\end{itemize}
 
 \section{Initial sitatuation}
 
@@ -20,19 +39,29 @@
 
 \begin{itemize}
 \item Someone reading a "big" Wikipedia (German, English)
-\item Someone editing a Wikipedia
+\item Someone editing a "big" Wikipedia
+\item Someone editing a "small" Wikipedia
 \item Someone reading a "small" Wikipedia 
+\item Wikidata editor
+\item Troll
 \end{itemize}
 
-\section{Non-functional requirements}
+\section{Requirements} 
+\subsection{Non-functional requirements}
 
 \begin{itemize}
-\item User should be able to influence (the display of the item \& the ordering of statements)
 \item User should be able to discover the Article placeholder
-\item Create an Article from the ArticlePlaceholder
+\item Editors should feel sense of ownership \& control
+\item Providing access to to previously unavailable information
+\item Clearly differs from a human-written article
+\item Must maintain status of Wikipedia as a trust worthy source of knowledge
+\item Attractive and engaging to use (espacially speakers of target languages)
+\item invite Reader to create and/or translate article
 \end{itemize}
 
-\section{Functional requirements}
+\subsection{Functional requirements}
+
+"High level requirements" -> Lua for editors, work on mobile, has images, usefull information presentation
 
 \subsection[wmflabs]{Deploy on wmflabs}
 \begin{itemize}
@@ -43,6 +72,7 @@
 \item Get to the Article Placeholders via search
 \item A possibility to create an article from scratch from an Article Placeholder by giving the user the possibility to enter a title
 \item Show main image of the item seperate from the statement list
+\item Create an Article from the ArticlePlaceholder
 \end{itemize}
 
 \subsection[betafeature]{Deploy as beta feature}
@@ -57,6 +87,32 @@
 
 \section{User stories}
 
+\section {Default display}
+
+\section {Show notable items in search}
+
+\section {Ranking of properties}
+
 \section{Implementation}
+
+\subsection {PHP}
+
+\subsubsection {SpecialPage}
+
+\subsubsection {SearchHook}
+
+\subsection {Lua}
+
+\section{Evaluation}
+
+\section{Conclusion and outlook}
+
+\section{Acknowledgment}
+
+\section{Code}
+
+\section{Evaluation question and results}
+
+\section{References}
 
 \end {document}
