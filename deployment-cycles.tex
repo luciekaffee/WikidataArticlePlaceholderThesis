@@ -17,10 +17,13 @@ The deployment timeline would look like this
 \\
   \begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
     % draw horizontal line   
-    \draw (0,0) -- (13.5,0);
+    \draw (0,0) -- (2,0);
     \draw[snake] (2,0) -- (4,0);
+    \draw (4,0) -- (5,0);
     \draw[snake] (5,0) -- (7,0);
+    \draw (7,0) -- (8,0);
 	\draw[snake] (8,0) -- (10,0);
+	\draw (10,0) -- (13.5,0);
     
 
     % draw vertical lines
@@ -29,24 +32,29 @@ The deployment timeline would look like this
 
     % draw nodes
     \draw (0,0) node[below=3pt] {} node[above=3pt] {$   $};
-    \draw (1.5,0) node[below=3pt] {test system} node[above=3pt] {};
-    \draw (3,0) node[below=3pt] {} node[above=3pt] {security review};
-    \draw (4.5,0) node[below=3pt] {beta feature 1} node[above=3pt] {};
-    \draw (6,0) node[below=3pt] {} node[above=3pt] {feedback};
-    \draw (7.5,0) node[below=3pt] {beta feature 2} node[above=3pt] {};
-    \draw (9,0) node[below=3pt] {} node[above=3pt] {feedback};
-    \draw (10.5,0) node[below=3pt] {deploy WP} node[above=3pt] {};
-    \draw (12,0) node[below=3pt] {} node[above=3pt] {more WP deploys};
-    \draw (13.5,0) node[below=3pt] {sister projects} node[above=3pt] {};
+    \draw (1.5,0) node[below=3pt] {\small test system} node[above=3pt] {};
+    \draw (3,0) node[below=3pt] {} node[above=3pt] {\small security review};
+    \draw (4.5,0) node[below=3pt] {\small beta feature 1} node[above=3pt] {};
+    \draw (6,0) node[below=3pt] {} node[above=3pt] {\small feedback};
+    \draw (7.5,0) node[below=3pt] {\small beta feature 2} node[above=3pt] {};
+    \draw (9,0) node[below=3pt] {} node[above=3pt] {\small feedback};
+    \draw (10.5,0) node[below=3pt] {\small deploy WP} node[above=3pt] {};
+    \draw (12,0) node[below=3pt] {} node[above=3pt] {\scriptsize more WP deploys};
+    \draw (13.5,0) node[below=3pt] {\small sister projects} node[above=3pt] {};
   \end{tikzpicture}
 
-\subsection{wmflabs}
+\subsection{Test system}
 To have a possibility to present the extension from the beginning, there was a test setup, available on \href{articleplaceholder.wmflabs.org/mediawiki}{wmflabs}. That test setup was specifically made to get a first idea of what the aims of the project are and was not intended to be used. 
 
-\subsection{beta feature}
-The next step was to deploy the extension as a beta feature. While having certain requirements for the test set up, the beta feature was supposed to be actually used by the community and therefore needed to fulfil more requirements, building up on what was already archived in the step before. 
 
-\subsection{deploy to a Wikipedia}
+\subsection{security review}
+To deploy an extension to the Wikimedia cluster, it is necessary to have go through the process of the security review, usually done by the Wikimedia Foundation.
+
+\subsection{Beta feature}
+The next step was to deploy the extension as a beta feature. While having certain requirements for the test set up, the beta feature was supposed to be actually used by the community and therefore needed to fulfil more requirements, building up on what was already archived in the step before. \\
+After the first deploy as a beta feature, the feedback by the community needs to be evaluated and the extension needs to be adjusted accordingly. The adjusted beta feature needs not only to consider the feedback again but also to gain the support and trust of the community to be deployed on a Wikipedia.
+
+\subsection{Deploy to a Wikipedia}
 Finally the extension would be deployed to the first wiki and therefore again needed to match other requirements again. 
 
 
