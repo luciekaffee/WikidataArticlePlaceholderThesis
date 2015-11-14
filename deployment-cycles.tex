@@ -12,16 +12,16 @@
 
 \section{Deployment cycles}
 Since there were different steps of deployments, it was necessary to split up the functional requirements and built up the requirements in every step on the ones before. \\
-The ideal timeline would look like this
+The deployment timeline would look like this
 \\ 
 \\
   \begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
     % draw horizontal line   
-    \draw (0,0) -- (2,0);
+    \draw (0,0) -- (13.5,0);
     \draw[snake] (2,0) -- (4,0);
-    \draw (4,0) -- (5,0);
     \draw[snake] (5,0) -- (7,0);
-    \draw (7,0) -- (13.5,0);
+	\draw[snake] (8,0) -- (10,0);
+    
 
     % draw vertical lines
     \foreach \x in {0,1.5,4.5,7.5,10.5,12,13.5}
