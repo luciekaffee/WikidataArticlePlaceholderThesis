@@ -1,0 +1,27 @@
+\documentclass[11pt]{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{listings}
+
+\title {{Functional requirements}}
+\author {Lucie-Aim\'{e}e Kaffee}
+\date{}
+
+\begin{document}
+
+\section{Identifier}
+
+To get a list of all external identifier in Wikidata, the item Q19847637, "Wikidata property representing a unique identifier", was used. To get all the Items, that were an instance of (property P31) this item, I used  \href{https://query.wikidata.org}{Wikidata's SPARQL endpoint}. A file with the property Ids is returned. The JSON format was the most useful in this case to be converted to a Lua table. \\
+
+\begin{lstlisting}[frame=single] 
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?identifier WHERE {
+   ?identifier  wdt:P31 wd:Q19847637 . 
+}
+\end{lstlisting}
+
+\end{document}
