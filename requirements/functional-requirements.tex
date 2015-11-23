@@ -29,9 +29,17 @@ As described before, the requirements would differ from the different stages in 
 
 \subsection{Naming}
 The special page should have a short name that is easy to remember. Calling the special page "Article Placeholder" would be confusing due to people expecting it to generate a whole article in that case. Therefore it is called "AboutTopic".
+
 \subsection{Display the article placeholder}
-\st{For a first setup it is necessary to give a first sight into what the extension is actually doing. Therefore, the main task is creating a basic default display of the statements. They don't need to look very pretty or easy to understand in the first version, they only need to show the possibility to display data from Wikidata and should differ from a content page a user would create manually. As part of this display, it is already important to display the main image of the item separated from the statement list as a first hint, that there is actually more work being done on the design part.} \\
-\todo[inline, color=green!40]{ Text: Display; identifier, every part user-editable }%
+For the display of the items, it is necessary to focus on a clear differentiation between the layout of the placeholder and what a user-written article would look like but still keep elements of the well-known Wikipedia layout. \\
+Therefore, the main image of the item is on the right side of the page where they are in articles, too.\\
+The main part of the page are the statement groups. Those consist of a property, one or multiple values, their qualifier and references. \\
+The statement groups are each in a box with a black border and arranged in a tile layout. Depending on the width of the screen, the amount of statement boxes per row differs. \\
+The label of the property is the header for each group separated from the rest by a horizontal line. Multiple values for the same statement are also separated by a line. Their qualifiers are right under the corresponding value and in a smaller font. \\
+To correspond with the existing layout of Wikipedia, the references are in an own section on the bottom of the page. \\
+The identifiers of an item should be in a distinct place to emphasize them and at the same time distant them from the other statements. They are listed in underneath the main image of the article to the right of the statement groups. \\
+The described layout should be the default but it is very important to give the user control over everything and therefore let every part be user editable. The renderer are in Lua and every part has getter and setter to overwrite them and adjust the design to the need of the communities. \\
+
 \subsection{Localisation}
 Of course it is important to have the whole extension localised from the beginning. Not only would it be hard to adjust it in the end but mainly this is the most important part about it- the extension being used by many international communities. Since the data itself is translated in Wikidata, this focuses more on things like labels on buttons and the name of the special page itself. \\
 \subsection{Discover article placeholder}
