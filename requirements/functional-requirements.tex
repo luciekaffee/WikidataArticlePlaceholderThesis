@@ -64,6 +64,9 @@ The challenge is to encourage editors, to add a new article if appropriate and a
 Using the existing JavaScript modules as provided by MediaWiki, there is a button on the bottom of the page asking for the creation of the article. A popup on the page opens and asks the user for a title for the new page. The default is the label of the item, which can be adjusted or a completely new title can be entered. \\
 There should be an option for users with disabled JavaScript. But since the amount of users with JavaScript disabled is about 3\% \todo[color=red!40]{ Connect to bib file (wiki:02) }%, 
 the priority is rather low. \\
+After entering the title of the new article, the user will be redirected to an empty editing page, where they can add their content. \\
+Using the resources available, the user should be able to translate the article from an existing article in another language on the same topic. \\
+In the future, it is intended to add the data provided by Wikidata in this empty page already so the user can use it while writing the article. 
 
 \subsection{Sorting of statement groups}
 The data in Wikidata is not sorted. The article placeholder are aimed at readers, who want to get an overview over the data and therefore only need the most important data on a topic and shouldn't be overwhelmed with everything available. 
@@ -74,28 +77,12 @@ Not only should the statements on a placeholder sorted but also limited to a dec
 \subsection {Identifier}
 Since the layout treats the identifier differently they shouldn't be in the list of ordered statements either. There isn't a datatyp for identifier in Wikidata yet but it is planned to introduce one. \\
 Until the datatyp is deployed it is sufficient to have a static list of property ids in the extension, that lists all identifier used in Wikidata, that can be exchanged later on with the proper handling of all statements with the identifier datatyp.
+
 \subsection{Caching}
-
-
+Since the generated content pages will be accessed frequently it will be necessary to implement some form of caching for them. With caching it would be possible to limit the amount of API requests to Wikidata, too, which will show an improvement in the performance. 
 
 \subsection {Unit tests}
-
-
-
-\begin{itemize}
-\item A default display of the data -- 
-\item Show main image of the item separated from the statement list -- 
-\item Localisation of the whole extension -- 
-\item Show the article connected to the item, if an article on the wiki exists
-\item Get to the ArticlePlaceholder via the SpecialPage URL --
-\item Get to the Article Placeholders via search
-\item A possibility to create an article from scratch from an Article Placeholder by giving the user the possibility to enter a title
-
-\item Create an Article from the ArticlePlaceholder
-\end{itemize} 
-
-\newpage
-\bibliography{./references} 
-\bibliographystyle{ieeetr}
+Especially the main code in PHP should be covered completely by unit tests.\\
+It is necessary for the workflow to set up the continues integration according to the defaults of mediaWiki and Wikibase. The CI part is not part of the thesis but is done while working on the other parts of the code.
 
 \end {document}
