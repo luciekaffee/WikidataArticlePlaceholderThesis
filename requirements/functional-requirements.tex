@@ -54,14 +54,16 @@ A lot of users will search for content of Wikipedia on search engines like googl
 \subsubsection{Red links}
 \begin{quotation}
 A red link (...) signifies a link to a page that is either non-existent or deleted. 
-\end{quotation} \cite{wiki:01} \todo[color=green!40]{ Connect to bib file (wiki:01) }%
+\end{quotation} \cite{wiki:01} \todo[color=red!40]{ Connect to bib file (wiki:01) }%
 \\
 These red links much used in the Wikipedia to indicate an article, which isn't there and leads the user to a "create article" page should rather bring them to an article placeholder, which offers them to create an article. Due to the high technical complexity of matching the titles of the red links to the Wikidata items, this topic is out of the scope for the thesis but will be an important part of the future development of the Article Placeholder extension.
 
 \subsection{Creation of an article from the article placehoder}
-
-
-\todo[inline, color=green!40]{ Text: Create Article; JS button, enter title, noJS }%
+From the content page with the data the user might want to create an article for the existing item. Since the title for the page might differ from the label of the item due to the local Wikipedia's standards the user must be able to enter a title for the page that doesn't exist on that Wikipedia yet. \\
+The challenge is to encourage editors, to add a new article if appropriate and at the same time to not encourage vandalism by creating empty articles or stubs.\\
+Using the existing JavaScript modules as provided by MediaWiki, there is a button on the bottom of the page asking for the creation of the article. A popup on the page opens and asks the user for a title for the new page. The default is the label of the item, which can be adjusted or a completely new title can be entered. \\
+There should be an option for users with disabled JavaScript. But since the amount of users with JavaScript disabled is about 3\% \todo[color=red!40]{ Connect to bib file (wiki:02) }%, 
+the priority is rather low. \\
 
 \subsection{Sorting of statement groups}
 
