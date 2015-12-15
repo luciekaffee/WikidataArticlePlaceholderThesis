@@ -4,6 +4,7 @@
 \usepackage{hyperref}
 \usepackage{todonotes}
 \usepackage{listings}
+\usepackage{soul}
 
 \title {{Functional requirements}}
 \author {Lucie-Aim\'{e}e Kaffee}
@@ -13,7 +14,7 @@
 
 \section{Identifier}
 
-To get a list of all external identifier in Wikidata, the item Q19847637, "Wikidata property representing a unique identifier", was used. To get all the Items, that were an instance of (property P31) this item, I used  \href{https://query.wikidata.org}{Wikidata's SPARQL endpoint}. A file with the property Ids is returned. The JSON format was the most useful in this case to be converted to a Lua table. \\
+To get a list of all external identifier in Wikidata, the item Q19847637, "Wikidata property representing a unique identifier", is used. To get all the Items, that are an instance of (property P31) this item \href{https://query.wikidata.org}{Wikidata's SPARQL endpoint} is used. With the following query it is possible to download a file with the query result in JSON. \\
 
 \begin{lstlisting}[frame=single] 
 PREFIX wd: <http://www.wikidata.org/entity/>
@@ -23,5 +24,8 @@ SELECT ?identifier WHERE {
    ?identifier  wdt:P31 wd:Q19847637 . 
 }
 \end{lstlisting}
+
+In a Lua script (Main.lua), the JSON output is converted to another Lua Script. Identifier.lua is generated and returns a Lua table, which contains tables with the Identifier mapped to "true" to be able to check whether a property is an identifier or not. This new script is just included in the Lua module and is called to get access to the table with the identifier. It is static since it would be too many requests to the SPARQL endpoint to check for every call to the special page again if the data on identifier changed. That implies if something changes with the identifiers on Wikidata or a new one is added the article placeholder doesn't reflect that. \\
+This implementation is chosen due to the fact that the Wikidata team is working on a identifier data type, which would make the need for a Lua table with all identifier dispense. As soon as there is a identifier data type, the way of checking a property id could be adjusted to just checking for the data type of the respective property. 
 
 \end{document}
