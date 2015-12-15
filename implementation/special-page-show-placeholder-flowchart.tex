@@ -1,0 +1,41 @@
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{error} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=yellow!20, node distance=3cm,
+    minimum height=2em]
+\tikzstyle{final} = [diamond, draw, fill=green!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+
+\sffamily
+
+\begin{tikzpicture}[node distance = 3cm, auto]
+    % Place nodes
+    \node [block, align=center] (showPl) {show Placeholder};
+    \node [block, below of=showPl] (callTemp) {call template};
+    \node [block, left=2em of callTemp] (showCA){showCreate Article};
+	\node [block, right=2em of callTemp] (showTitle) {showTitle};
+	\node [block, right=2em of showTitle] (showLl) {showLang-uagelinks};
+	\node[block, below of=showCA] (passL) {pass label};
+	\node [block, left=2em of passL] (enableOOUI) {enableOOUI};
+	\node [block, below of=passL] (createB) {create Button};
+	\node [block, right of=createB] (JS) {JavaScript module};
+	\node [block, below of=showLl] (sl) {getSitelinks ForItem};
+	\node [block, below of=sl] (lcpn) {Language Code:Page Name};
+	
+    % Draw edges
+    \path [line] (showPl) -- (showCA);
+	\path [line] (showPl) -- (callTemp);
+	\path [line] (showPl) -- (showTitle);
+	\path [line] (showPl) -- (showLl);
+	\path [line] (showCA) -- (enableOOUI);
+	\path [line] (showCA) -- (passL);
+	\path [line] (enableOOUI) -- (createB);
+	\path [line] (passL) -- (createB);
+	\path [line] (createB) -- (JS);
+	\path [line] (showLl) -- (sl);
+	\path [line] (sl) -- (lcpn);
+\end{tikzpicture}
+
+\rmfamily

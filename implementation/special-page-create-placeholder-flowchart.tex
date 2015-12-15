@@ -7,7 +7,9 @@
     minimum height=2em]
 \tikzstyle{final} = [diamond, draw, fill=green!20, 
     text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
-    
+
+\sffamily
+
 \begin{tikzpicture}[node distance = 2cm, auto]
     % Place nodes
     \node [block] (execute) {execute};
@@ -16,12 +18,12 @@
     \node [cloud, below of=itemIdParam] (entityId) {entityId?};  
     \node [block, below of=entityId] (createForm) {createForm};
     \node [final, right of=createForm] (Html) {HTML};
-    \node [final, below of=Html] (JS) {JavaScript};
     \node [cloud, left of=createForm] (hasEntity) {hasEntity?};
     \node [cloud, below of=hasEntity] (onWiki) {articleOnWiki?};
     \node [error, right of=onWiki] (error) {error};
     \node [final, below of=onWiki] (redirect) {redirect};
     \node [final, right of=redirect] (placeholder) {show Placeholder};
+    \node [final, right of=placeholder] (JS) {JavaScript};
     % Draw edges
     \path [line] (execute) -- (showContent);
     \path [line] (showContent) -- (itemIdParam);
@@ -29,7 +31,6 @@
     % \path [line] (entityId) -- (createForm);
     \draw (entityId) -- (createForm) node [midway, above, sloped, -latex'] (textnode) {no};
     \path [line] (createForm) -- (Html);
-    \path [line] (Html) -- (JS);
     \draw (entityId) -- (hasEntity) node [midway, above, sloped, -latex'] (textnode) {yes};
     % \path [line] (entityId) -- (hasEntity);
     \draw (hasEntity) -- (onWiki) node [midway, above, sloped, -latex'] (textnode) {yes};
@@ -41,4 +42,7 @@
     % \path [line] (onWiki) -- (redirect);
     \draw (onWiki) -- (placeholder) node [midway, above, sloped, -latex'] (textnode) {no};
     % \path [line] (onWiki) -- (placeholder);
+    \path [line] (placeholder) -- (JS);
 \end{tikzpicture}
+
+\rmfamily
