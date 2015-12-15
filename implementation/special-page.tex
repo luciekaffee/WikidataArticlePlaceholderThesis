@@ -1,0 +1,26 @@
+\documentclass[11pt]{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\title {{Implementation}}
+\author {Lucie-Aim\'{e}e Kaffee}
+\date{}
+
+\begin{document}
+
+\subsubsection{SpecialPage}
+
+The SpecialPage SpecialAboutTopic.php uses multiple services provided by either Wikibase or MediaWiki. It also extends the class SpecialPage.php provided by MediaWiki to use its functionalities.
+\st{In the method showContent depending on whether an entity id is already passed or not the special page generates html or} \\
+The way of the code to show a placeholder looks like the following. \\
+
+\input{special-page-create-placeholder-flowchart}
+
+\end{document}
