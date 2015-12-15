@@ -1,123 +1,74 @@
 \documentclass[11pt]{article}
-\title {{Structure of the thesis}}
+\title {{(Draft of the) Structure of the thesis}}
 \author {Lucie-Aim\'{e}e Kaffee}
 \date{}
 
 \begin {document}
 
-\maketitle
+  \maketitle
+  \tableofcontents
 
-\section{Dedication}
+  \section{Dedication}
 
-\section{Abstract}
+  \section{Abstract}
 
-\section{Disclaimer (?)}
+  \section{Disclaimer}
 
-\section{Table of content \& list of figures (?) \& tables (?)}
+  \section{Table of content \& list of figures (?) \& tables (?)}
 
-\section {Glossary}
+  \section {Glossary}
 
-\section{Introduction}
+  \section{Introduction}
 
-\section{Fundamentals}
-\subsection{To Wikipedia}
-\subsection{To Wikidata}
+  \section{Fundamentals}
+  \subsection{Wikipedia}
+  \subsection{Wikidata}
 
-\section{Previous work (?)}
-\begin{itemize}
-\item Reseanator
-\item itwiki (Search)non-functional-requirements
-\item Infoboxes
-\item ruwiki (connecting to Wikidata)
-\end{itemize}
+  \section{Previous work/Initial sitatuation}
+  \subsection{Infoboxes}
+  \subsection{Reasenator}
+  \subsection{itwiki (search)}
+  \subsection{ruwiki (connecting to Wikidata)}
 
-\section{Initial sitatuation}
+  \section{Objective}
 
-\section{Objective}
+  \section{User stories}
+  \subsection{Personas}
 
-\section{Personas}
+  \section{Requirements} 
+  \subsection{Non-functional requirements}
+  \subsection{Functional requirements}
 
-\begin{itemize}
-\item Someone reading a "big" Wikipedia (German, English)
-\item Someone editing a "big" Wikipedia
-\item Someone editing a "small" Wikipedia
-\item Someone reading a "small" Wikipedia 
-\item Wikidata editor
-\item Troll
-\end{itemize}
+  \section {Default display}
 
-\section{Requirements} 
-\subsection{Non-functional requirements}
+  \section {Show notable items in search}
 
-\begin{itemize}
-\item User should be able to discover the Article placeholder
-\item Editors should feel sense of ownership \& control
-\item Providing access to to previously unavailable information
-\item Clearly differs from a human-written article
-\item Must maintain status of Wikipedia as a trust worthy source of knowledge
-\item Attractive and engaging to use (espacially speakers of target languages)
-\item invite Reader to create and/or translate article
-\end{itemize}
+  \section {Ranking of properties}
 
-\subsection{Functional requirements}
+  \section{Implementation}
 
-"High level requirements" -> Lua for editors, work on mobile, has images, usefull information presentation
+  \subsection {PHP}
+  \subsubsection {SpecialPage}
+  \subsubsection {Search}
+  \subsubsection{Sorting of statement groups}
+  \subsubsection {Unit tests}
+  
+  \subsection {Lua}
+  \subsubsection {Renderer}
+  
+  \subsection[deploy]{Deployment}
+  \subsection{Deployment cycle}
 
-\subsection[wmflabs]{Deploy on wmflabs}
-\begin{itemize}
-\item Get to the ArticlePlaceholder via the SpecialPage URL
-\item A default display of the data
-\item Localisation of the whole extension
-\item Show the article connected to the item, if an article on the wiki exists
-\item Get to the Article Placeholders via search
-\item A possibility to create an article from scratch from an Article Placeholder by giving the user the possibility to enter a title
-\item Show main image of the item seperate from the statement list
-\item Create an Article from the ArticlePlaceholder
-\end{itemize}
+  \section{Evaluation}
 
-\subsection[betafeature]{Deploy as beta feature}
-\begin{itemize}
-\item Nice default display
-\item Identifier separated from other statements
-\item Only notable items in the search
-\item Proper name for the special page
-\item Statement groups sorted
-\end{itemize}
+  \section{Conclusion and outlook}
 
-\subsection[deploy]{Deploy on a Wikipedia}
+  \section{Acknowledgment}
 
-\section{User stories}
+  \section{Code}
 
-\section {Default display}
+  \section{Evaluation question and results}
 
-\section {Show notable items in search}
-
-\section {Ranking of properties}
-
-\section{Implementation}
-
-\subsection {PHP}
-
-\subsubsection {SpecialPage}
-
-\subsubsection {SearchHook}
-
-\subsubsection {Tests}
-
-\subsection {Lua}
-
-\subsubsection {Renderer}
-
-\section{Evaluation}
-
-\section{Conclusion and outlook}
-
-\section{Acknowledgment}
-
-\section{Code}
-
-\section{Evaluation question and results}
-
-\section{References}
+  \section{References}
 
 \end {document}
