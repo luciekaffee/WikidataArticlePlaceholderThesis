@@ -7,27 +7,34 @@
 \usepackage{soul}
 \usepackage[latin1]{inputenc}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows,snakes}
+\usepackage{lineno}
 
 \title {{Implementation}}
 \author {Lucie-Aim\'{e}e Kaffee}
 \date{}
 
 \begin{document}
-
+	\linenumbers
 	\section{Implementation}
-
+	\subsection{Localisation}
 	\subsection{PHP}
 	\input{special-page}
 	\newpage
-	\input{search}
-
+	\include{search}
 	\newpage
-	\subsection{Lua}
-	\input{identifier}
-	
-	\newpage
+	\subsubsection{Sorting of statement groups}
+	\subsubsection{Including Lua}
+	\subsubsection{Unit tests}
 	\subsection{JavaScript}
+	\subsection{Lua}
+	\subsubsection{Renderer}
+	\input{identifier}
+	\newpage
+	\subsection{CSS}
+	\subsection{Deployment}
+	\input{deployment-cycles}
+
 
 
 \end{document}
