@@ -1,6 +1,6 @@
 \subsubsection{Identifier}
 
-To get a list of all external identifier in Wikidata, the item Q19847637, "Wikidata property representing a unique identifier", is used. To get all the Items, that are an instance of (property P31) this item \href{https://query.wikidata.org}{Wikidata's SPARQL endpoint} is used. With the following query it is possible to download a file with the query result in JSON. \\
+To get a list of all external identifier in Wikidata, the item "Wikidata property representing a unique identifier" (Q19847637), is used. To get all the Items, that are an "instance of" (P31) this item Wikidata's SPARQL endpoint \footnote{\href{https://query.wikidata.org}{https://query.wikidata.org}} is used. The following query returns a list of IDs. This list can be downloaded as a file with the data in their JSON representation. \\
 
 \begin{lstlisting}[frame=single] 
 PREFIX wd: <http://www.wikidata.org/entity/>
@@ -12,4 +12,4 @@ SELECT ?identifier WHERE {
 \end{lstlisting}
 
 In a Lua script (Main.lua), the JSON output is converted to another Lua Script. Identifier.lua is generated and returns a Lua table, which contains tables with the Identifier mapped to "true" to be able to check whether a property is an identifier or not. This new script is just included in the Lua module and is called to get access to the table with the identifier. It is static since it would be too many requests to the SPARQL endpoint to check for every call to the special page again if the data on identifier changed. That implies if something changes with the identifiers on Wikidata or a new one is added the article placeholder doesn't reflect that. \\
-This implementation is chosen due to the fact that the Wikidata team is working on a identifier data type, which would make the need for a Lua table with all identifier dispense. As soon as there is a identifier data type, the way of checking a property id could be adjusted to just checking for the data type of the respective property. 
+This implementation is chosen due to the fact that the Wikidata team is working on a identifier data type, which would make the need for a Lua table with all identifier obviate \todo{check term!}. As soon as there is a identifier data type, the way of checking a property id could be adjusted to just checking for the data type of the respective property. 
