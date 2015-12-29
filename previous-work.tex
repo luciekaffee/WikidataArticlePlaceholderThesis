@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{listings}
+\usepackage{soul}
+
+\title {{Functional requirements}}
+\author {Lucie-Aim\'{e}e Kaffee}
+\date{}
+
+\begin {document}
+
+\section{Previous work}
+\subsection{Infobox}
+\todo{connect to wiki:05}
+The infobox on Wikipedia is a table on the top right of any Wikipedia page displaying a summary on the topic the article is about. They are static tables created by an editor. They can but up to date mostly don't use data from Wikidata. They are the first and most important form to display data if you look at Wikipedia. They are of great value for the articles and reader to get an overview. \\
+In the work with Article Placeholder it is very important to consider the way infoboxes work but to differ in the over all layout strongly from those to emphasize the fact that the tables created by the extension are not infoboxes but auto-generated. 
+
+\subsection{Reasonator}
+Reasonator \footnote{https://tools.wmflabs.org/reasonator/} by Magnus Manske has a very similar approach to the Article Placeholder extension- it displays Items from Wikidata in a visual pleasing way, aiming at readers rather than Wikidata editors. Reasonator does not stick with the typical Wikipedia layout but tries to find the best way possible to display the data. \\
+The items are- when appropriate- separated in the classes  \todo{connect to wiki:06} "people, locations, [and] species". \todo{this sentence is a mess} This gives the tool the possibility to display them in a unique way where related data can be shown BETTA. \\
+Most of the code is in JavaScript. 
+
+\subsection{Wdsearch.js}
+There is a script in JavaScript\todo{the link}\footnote{\href{https://en.wikipedia.org/w/index.php?title=MediaWiki:Wdsearch.js&action=raw&ctype=text/javascript}{Script on English Wikipedia}}, which is on the Wikipedia, to include search results from Wikidata on Wikipedia. At the bottom of the regular search page on Wikipedia it displays results from Wikidata. The label of the item contains a link to the Wikidata item. It is followed by some important attributes taken from the properties on an item followed by the description if one is available. With three icons following a user can choose to see the topic on a different Wikipedia, Wikimedia Commons or Reasonator. \\
+To date, the script is enabled on Polish and Italian Wikipedia. It helps user to find more information on a topic they are looking for but forces them for now to go to another website in order to find this information and understand the way these other websites work. \\
+The idea to include Wikidata search results is something Article Placeholder picks up and tries to improve. 
+
+\subsection{ruwiki (connecting to Wikidata)}
+
+\end{document}
