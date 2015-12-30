@@ -1,3 +1,9 @@
+\documentclass[11pt]{article}
+
+\usepackage{todonotes}
+
+\begin {document}
+
 \subsection{Personas}
 
 \subsection{Reader of a small Wikipedia}
@@ -54,3 +60,5 @@ The thing that bothers her the most on Wikidata are missing references, which ar
 \item Wikidata editor
 \item Troll
 \end{itemize}
+
+\end {document}
