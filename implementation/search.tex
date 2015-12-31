@@ -1,4 +1,4 @@
-\subsubsection{Search}
+\subsection{Search}
 In order to be able to find results from the placeholder in the MediaWiki search it was necessary to use the SearchHook provided by MediaWiki.
 With the help of the TermSearchInteractor provided by Wikibase, which needed to be moved to Wikibase library in order to be able to use the service in Wikibase client and not only in Wikibase repository as before, all items with labels or aliases matching the given search term are returned. From those a string containing the label of the item, displayed as a link to the special page with the corresponding entity ID, and the description of the item in case there are multiple results.  \\
 If the result is not empty, the results are added to the search page as Wikitext. \\

@@ -1,23 +1,5 @@
-\documentclass[11pt]{article}
-
-\usepackage[dvipsnames]{xcolor}
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref}
-\usepackage{todonotes}
-\usepackage{listings}
-\usepackage{soul}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows,snakes}
-\usepackage{lineno}
-
-\title {{Thesis}}
-\author {Lucie-Aim\'{e}e Kaffee}
-\date{}
-
-\begin {document}
 \section{Requirements}
-\input{personas}
-\include{non-functional-requirements}
-\include{functional-requirements}
-\include{user-stories}
-\end{document}
+\input{requirements/personas}
+\input{requirements/non-functional-requirements}
+\input{requirements/functional-requirements}
+\input{requirements/user-stories}

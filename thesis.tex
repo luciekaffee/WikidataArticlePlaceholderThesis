@@ -1,15 +1,28 @@
 \documentclass[11pt]{article}
 
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{listings}
+\usepackage{soul}
 \usepackage{tikz}
-\usetikzlibrary{snakes}
+\usetikzlibrary{shapes,arrows,snakes}
+\usepackage{lineno}
 
-\title {{Functional requirements}}
+\title {{Generating Article Placeholders from Wikidata for Wikipedia: Increasing access to free and open knowledge}}
 \author {Lucie-Aim\'{e}e Kaffee}
 \date{}
 
 \begin {document}
+\linenumbers
 
-\include{Structure}
+\include{introduction}
+\include{previous-work}
+\input{fundamentals/fundamentals}
+\newpage
+\input{requirements/requirements}
+\newpage
+\input{implementation/implementation}
 
 \end {document}

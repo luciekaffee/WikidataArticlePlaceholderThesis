@@ -1,43 +1,14 @@
-\documentclass[11pt]{article}
-
-\usepackage[dvipsnames]{xcolor}
-\usepackage{hyperref}
-\usepackage{todonotes}
-\usepackage{listings}
-\usepackage{soul}
-\usepackage[latin1]{inputenc}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows,snakes}
-\usepackage{lineno}
-
-\title {{Implementation}}
-\author {Lucie-Aim\'{e}e Kaffee}
-\date{}
-
-\begin{document}
-	\linenumbers
 	\section{Implementation}
 	
 	- extension registration in LocalSettings.php with the global variable \textbf{wgArticlePlaceholderImageProperty} for the image property (\href{https://www.mediawiki.org/wiki/Manual:Extension_registration}{[Manual:Extension Registration]})\\
-	
-	\input{localisation}
-	\newpage
-	\subsection{PHP}
-	\input{special-page}
-	\include{search}
-	\newpage
-	\subsubsection{Sorting of statement groups}
-	\subsubsection{Including Lua}
-	\subsubsection{Unit tests}
-	\subsection{JavaScript}
-	\subsection{Lua}
-	\subsubsection{Renderer}
-	\input{identifier}
-	\newpage
-	\subsection{CSS}
+	\subsection{Setting up the extension}
+	\input{implementation/special-page}
+	\input{implementation/display}
+	\input{implementation/search}
+	\subsection{Sorting of statement groups}
+	\subsection{Including Lua}
+	\input{implementation/localisation}
+	\subsection{Including Lua}
+	\subsection{Unit tests}
 	\subsection{Deployment}
-	\input{deployment-cycles}
-
-
-
-\end{document}
+	\input{implementation/deployment-cycles}

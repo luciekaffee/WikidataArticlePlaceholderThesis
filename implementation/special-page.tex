@@ -1,4 +1,4 @@
-\subsubsection{SpecialPage}
+\subsection{SpecialPage}
 
 The SpecialPage SpecialAboutTopic.php uses multiple services provided by either Wikibase or MediaWiki. It also extends the class SpecialPage.php provided by MediaWiki to use its functionalities. \\
 To create a content page, it is necessary to first check, if there is actually an entity ID passed by the HTML form. In the case of a user arriving at the special page, the entity ID is obviously empty. Therefore the HTML of the special page would be created with the function create form, which adds HTML to the OuptputPage object and a form for the entity ID the user can enter. \\
@@ -6,9 +6,9 @@ If there is an entity ID, it needs to be checked whether this entity actually ex
 If the entity ID exists, the special page needs to check whether there is already an article on this Wiki for the item. This is done with the siteLinkLoopup service by Wikibase. The function getArticleOnWiki is called and returns the title if there is an article or null if not. The user is redirected with the redirect function of the OutputPage class to the article if it exists. \todo{this sentence is chaos!} \\
 The way of the code to show a placeholder looks like the following flowchart. \\
 
-\input{special-page-create-placeholder-flowchart}
+\input{implementation/special-page-create-placeholder-flowchart}
 
 Otherwise an article placeholder is created. In order to do this, a template on the Wiki is invoked, which calls the Lua module. Additionally a OOUI is enable in order to include the JavaScript module. The label of the item is passed to the JavaScript module. The label is used in PHP to set the title of the page, too. The link to other Wikipedia language versions (language links) are set in PHP as well as the links to other projects. The sitelinks are read from the SiteStore service provided by Wikibase. They are assembled from their language code and the page name with a colon in between. \\
 Showing a placeholder can be described as in the following chart. \\ 
 
-\input{special-page-show-placeholder-flowchart}
+\input{implementation/special-page-show-placeholder-flowchart}
