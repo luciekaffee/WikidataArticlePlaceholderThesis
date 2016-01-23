@@ -22,34 +22,24 @@ From the previous requirements following user stories could be identified. The u
 
 As a reader of a small Wikipedia, I want to access readable information from Wikidata so that I can get all the information available in my language. \\
 \\
-As a reader of a small Wikipedia, I want to search for a topic and get to an article placeholder if there is no article on the topic yet so that I can get information on the topic. \\
+As a reader of a small Wikipedia, I want to search for a topic and get to an article placeholder if there is no article on the topic yet so that I can get information on the topic. \\ As a reader of Wikipedia, I want to search for a topic and find an Article Placeholder if no article exists yet, so that I can access all information available on a topic. \\
 \\
 As a reader, I want to link to an article paceholder and get to the article if it exists so that I can read the article rather than just see the data. \\
 \\
 As a reader, I want to see the Article Placeholer of a certain item, so that I can link to the placeholder rather than the Wikidata item. \\
 \\
+As a reader, I want to see the most important information about a topic first, so that I don't have to read through all the data to get what really interests me. \\
+\\
+As an editor, I want to influence the order items are shown so that I can adapt it to what is most important for us, which may differ from other communities.\\
+\\
 As an editor, I want to have an easy way to get from an Article Placeholder to the edit page, so that I can create an article when appropriate. \\
 \\
-
-
-\begin{itemize}
-
-\item Discovery (wie komme ich dahin)\\
--- suche\\
--- über die url der special page\\
--- red links (discussion)\\
--- wenn es Seite schon gibt, zeige diese an\\
-\item Display -- default (nicht veränderbar)
--- alle statements vs “nützliche” statements
--- kein importet from as reference
--- ordnen der statements (property suggester?, discussion)
--- klar machen, dass placeholder
-\item extended (veränderbar)
--- veränderbare Anzeigemöglichkeit
--- veränderung der Daten (am Anfang mit Link zu Wikidata)
-\item Translation of existing content (translation tool) (über sitelinks)
-\item encouraging article creation 
-\item Creation of article from Article Placeholder
-\end{itemize}
+As an editor, I want to have the option to translate articles from an Article Placeholder, so that I am able to contribute to the diversity of articles on my Wiki. \\
+\\
+As an editor familiar with Lua, I want to be able to adjust the layout of the Article Placeholder on my Wikipedia so that I can adjust it to the needs of my community. \\
+\\
+As an editor and reader of a very small Wikipedia, I want to have a pleasant default for the Article Placeholder layout and order, so that we are not in need of someone familiar with Lua to make the extension work. \\
+\\
+As a reader, I want to have a clear distinction between a generated content page and a manual written article, so that I can classify the information in the appropriate context. \\
 
 \end{document}
