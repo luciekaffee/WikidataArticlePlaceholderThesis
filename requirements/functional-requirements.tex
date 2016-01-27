@@ -1,26 +1,24 @@
-%\listoftodos
-
 \section {Functional requirements}
 The functional requirements are based on the non-functional requirements and aim to realize those. Additional requirements are derived from the technical environment and its specifications. \\
 To be able to use the data of Wikidata, ArticlePlaceholder needs to be based on Wikibase and MediaWiki.
 As MediaWiki is realized in PHP, the main part of the extension needs to make use of that language as well as the services provided by MediaWiki and Wikibase. \\
-The programming language for scripts on Wikipedia is Lua. \todo[color=green!40]{Explain Lua}% Therefore the parts that will be user-editable need to be written in Lua so they can be overwritten by the local communities. \\
-The default for the content pages presents the information and data in a useful way and make use of the images, which are connected to the item displayed.\\
-To be conform with the technical specifications the extension is required to work in any mobile device. \\
+The programming language for scripts on Wikipedia is Lua. \todo[color=green!40]{Explain Lua} Therefore the parts that will be user-editable need to be written in Lua. This way they can be overwritten by the local communities. \\
+The default for the content pages presents the information and data in a useful way and makes use of the images, which are connected to the item displayed.\\
+To conform with the technical specifications the extension is required to be responsive and work on mobile devices. \\
 \\
-The requirements differ for the different stages in the deployment cycle. They are always built on top of each other but since the parts have different importance we focus on a very basic set up first and add up more features later on. Listed below are the requirements for the final system deployed to a Wikipedia. \todo{Maybe kill the whole Absatz} \\
+The requirements differ for the different stages of the deployment cycle. They are always built on top of each other but since the parts have different levels of importance we will focus on a very basic set up first and add up more features later on. Listed below are the requirements for the final system deployed to a Wikipedia. \todo{Maybe kill the whole Absatz} \\
 
 \subsection{Naming}
 The special page should have a short name that is easy to remember. Calling the special page "Article Placeholder" would be confusing due to people expecting it to generate a whole article in that case. Therefore it is called "AboutTopic". \todo[color=green!40]{More reasoning}%
 
 \subsection{Display the article placeholder}
 The pages displaying the content of a Wikidata item focus on a clear differentiation between the layout of the placeholder and what a user-written article would look like. They still contain elements of the well-known Wikipedia layout. \\
-Therefore, the main image of the item is on the right side of the page where it would be in articles too.\\
+Therefore, the main image of the item is on the right side of the page where it would be in articles as well.\\
 The core part of the page are the statement groups. Those consist of a property, one or multiple values, their qualifiers and references. \\
 The statement groups are each in a box with a black border and arranged in a tile layout. The amount of statement boxes per row differs depending on the width of the screen. \todo{aka responsive layout since a lot of user will be on mobile or similar}\\
 The label of the property is the header for each group which is separated from the body by a horizontal line. Multiple values for the same statement are also separated by a line. Their qualifiers are right under the corresponding value and in a smaller font. \\
-References can be found in an own section at the bottom of the page in order to stick to the existing layout of Wikipedia. \\
-The identifier of an item should be in a distinct place to be emphasized and distinguishable from the other statements at the same time. They are listed underneath the main image of the article to the right of the statement groups. \\
+References can be found in their own section at the bottom of the page sticking to the existing layout of Wikipedia. \\
+The identifier of an item should be in a distinct place in order to be emphasized and distinguishable from the other statements at the same time. They are listed below the main image of the article to the right of the statement groups. \\
 The described layout is the default but it is very important to give the user control over everything and therefore let every part be user editable. \\
 
 \subsection{Localisation}
@@ -29,11 +27,11 @@ It is important to have the whole extension localized from the beginning. Not on
 
 \subsection{Discover article placeholder}
 \subsubsection{SpecialPage URL}
-A user is able to get to the article placeholder not only through the interface of the special page but also via a handy URL, that gets the item number as a parameter. Based on the defaults of MediaWiki and Wikibase, here is an example which shows the use of the defaults used on MediaWiki and Wikibase: \colorbox{Gray}{\lstinline[basicstyle=\ttfamily\color{white}]|Special:AboutTopic/Q5279|} \\
+A user is able to get to the article placeholder not only through the interface of the special page but also via a handy URL, that receives the item number as a parameter. Based on the defaults of MediaWiki and Wikibase, here is an example showing the use of the defaults used on MediaWiki and Wikibase: \colorbox{Gray}{\lstinline[basicstyle=\ttfamily\color{white}]|Special:AboutTopic/Q5279|} \\
 
 \subsubsection{Search}
-To be able to discover an article placeholder while looking for a certain topic the generated pages are added to the search on Wikipedia. There are different places for the results in the search page. It can be attached on the bottom of the results or placed to the right of the regular search results. Here it is important to figure out the needs of the editors and readers and act accordingly. \\
-In order to reduce the content to display only desired entries related to a certain topic the search looks for items with corresponding labels and aliases. \todo{shorten this sentence} \\
+To be able to discover an article placeholder while looking for a topic the generated pages are added to the search on Wikipedia. There are different places for the results in the search page. They could be attached to the bottom of the results or placed to the right of the regular search results. It is important to figure out the needs of the editors and readers and act accordingly. \\
+In order to reduce the displayed content to only desired entries related to a certain topic the search looks for items with corresponding labels and aliases. \todo{shorten this sentence} \\
 The results in the search should be limited to notable items. It is important to remark, that on Wikipedia projects the notability criterias are not necessarily the same as on Wikidata. \\
 Limiting the items displayed is especially important since article creation should be only encouraged when it makes sense in order to not have a lot of articles created, that would be deleted right away anyway.\\
 Since it is hard to decide, which content is actually notable, the items appearing in the search should be limited to only the ones having at least two to three statements and either two sitelinks to the same project (like Wikipedia or Wikivoyage) or two to three statements over all. \\
