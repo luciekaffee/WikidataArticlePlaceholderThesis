@@ -1,5 +1,5 @@
   \subsubsection{Deployment cycles}
-  Since there were different steps of deployments, it was necessary to split up the functional requirements and built up the requirements in every step on the ones before. \\
+  Since there were different steps of deployments, it was necessary to split up the functional requirements and built up the requirements in every step on the ones that came before. \\
   The deployment timeline would look like this
   \\ 
   \\
@@ -31,18 +31,20 @@
       \draw (13.5,0) node[below=3pt] {\small sister projects} node[above=3pt] {};
     \end{tikzpicture}
 
-\todo{on own page!}
+\todo{on own page! Something like Figure 1}
 
   \paragraph{Test system}
-  To have a possibility to present the extension from the beginning, there was a test setup, available on Wikimedia Labs \footnote{\href{articleplaceholder.wmflabs.org/mediawiki}{articleplaceholder.wmflabs.org/mediawiki}}. Wikimedia Labs is 
+  From the beginning there was a test setup available on Wikimedia Labs \footnote{\href{articleplaceholder.wmflabs.org/mediawiki}{articleplaceholder.wmflabs.org/mediawiki}}. Wikimedia Labs is 
 	\begin{quotation}
 		the Wikimedia Foundation (WMF)'s cloud computing environment for developing software for the Foundation's operations. It also hosts bots and tools maintained and used by the community to maintain the foundation's projects. 
 	\end{quotation} \todo{connect to wiki:03}
-Besides the bots running on Wikimedia Labs it is used for various tools and to test software by volunteers as well as WMF's staff. \\
-The test setup was set up to give editors as well as the public a first insight into what the extension looks like and what it is capable of. It is also aimed at starting a discussion on what can be improved in order to be adjusted to the community's needs.
+Besides the bots and scripts running on Wikimedia Labs it is used for various tools and to test software by volunteers as well as WMF's staff.\todo{improve sentence} \\
+The test setup was established to give editors as well as the public a first insight into what the extension looks like and what features it offers and make them a part of development. It is also aimed at starting a discussion on what can be improved in order to be adjusted to the community's needs.
 
   \paragraph{Security review}
-  To deploy an extension to the Wikimedia cluster, it is necessary to have go through the process of the security review, usually done by the Wikimedia Foundation.
+  To deploy an extension to the Wikimedia cluster, it is necessary to go through the process of the security review by the Security Engineer of the Wikimedia Foundation. \todo{in order to?}
+  
+  \todo[inline]{make clear this happend, the following will happen}
 
   \paragraph{Beta Feature}
   Beta Features are functionalities that can be enabled by registered user in their preferences. 

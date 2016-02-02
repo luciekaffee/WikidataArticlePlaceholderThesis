@@ -1,8 +1,16 @@
 \subsubsection{Renderer}
 
-Every part of an entity, or Item in the case of the Article Placeholder, needs a renderer to be displayed. The renderer uses the data given from Wikidata and renders it to html, which can be displayed on the special page about an item. \\
-The MediaWiki conventions for naming Lua module is \texttt{mw.ext.extensionName.moduleName}. In order to match them, the renderer for the ArticlePlaceholder is called \texttt{mw.ext.articlePlacholder.entityRenderer}. \\
-Every renderer has get and set functions. Therefore every part of the display can be overwritten locally on Wikipedia. \\
-The Lua module on the Wikipedia in on the page \texttt{Module:AboutTopic}, which is called by the template \texttt{Template:AboutTopic}. In the module AboutTopic a user with the respective rights can call the get and set functions. \\
+Every part of an entity, or item in the case of the ArticlePlaceholder, needs a renderer to be displayed. The renderer uses the data taken from Wikidata and renders it to HTML, which can be displayed on the special page about an item. \\
+The MediaWiki conventions for naming Lua modules is 
+\begin{center}
+\texttt{mw.ext.extensionName.moduleName} 
+\end{center}
+In order to match them, the renderer for the ArticlePlaceholder is called 
+\begin{center}
+\texttt{mw.ext.articlePlacholder.entityRenderer}
+\end{center}
+Every renderer has getter and setter functions. Therefore every part of the display can be overwritten locally on Wikipedia. \\
+The Lua module on the Wikipedia in on the page \texttt{Module:AboutTopic}, which is called by the template \texttt{Template:AboutTopic}. In the module AboutTopic a user with the appropriate rights can call the get and set functions. \\
+\todo[inline]{3 examples, one easy, two tricky, ``additionally there are renderer for ...'' and digram}
 
 \todo{Describe every renderer? }
