@@ -11,6 +11,13 @@ In order to match them, the renderer for the ArticlePlaceholder is called
 \end{center}
 Every renderer has getter and setter functions. Therefore every part of the display can be overwritten locally on Wikipedia. \\
 The Lua module on the Wikipedia in on the page \texttt{Module:AboutTopic}, which is called by the template \texttt{Template:AboutTopic}. In the module AboutTopic a user with the appropriate rights can call the get and set functions. \\
-\todo[inline]{3 examples, one easy, two tricky, ``additionally there are renderer for ...'' and digram}
+Since Lua doesn't have objects, the renderer are all functions. 
 
-\todo{Describe every renderer? }
+\begin{figure}[ht]
+	\centering
+	\input{implementation/diagrams/renderer}
+	\caption{Diagram of all renderer functions}
+	\label{fig:renderer}
+\end{figure}
+
+\todo[inline]{3 examples, one easy, two tricky, ``additionally there are renderer for ...'' and digram}

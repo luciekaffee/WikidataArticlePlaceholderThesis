@@ -1,0 +1,60 @@
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=20em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{blockS} = [rectangle, draw, fill=blue!20, 
+    minimum width=4em, text centered, node distance=2cm and 0.5cm, rounded corners, minimum height=3em]
+\tikzstyle{error} = [draw, ellipse,fill=red!20, node distance=1cm,
+    minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=yellow!20, node distance=2cm and 1cm,
+    minimum height=2em]
+
+\sffamily
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (er-render) {entityRenderer.render};
+    \node [blockS, below of = er-render] (renderE){renderEntity};
+	\node [blockS, below of = er-render] (renderE){renderEntity};
+	\node [blockS, below of = renderE] (descriptionR){descriptionRenderer};
+	\node [cloud, below of = descriptionR] (mwdescr){mw.wikibase.description};
+	\node [blockS, left = of descriptionR] (topImageR){topImageRenderer};
+	\node [blockS, right = of descriptionR] (statementListR){statementListRenderer};
+	\node [blockS, right = of statementListR] (idListR){identifierListRenderer};
+	\node [blockS, below of = idListR] (bestStatR){bestStatementRenderer};
+	\node [blockS, below of = bestStatR] (imageStatR){imageStatementRenderer};
+	\node [blockS, left = of imageStatR] (StatementR){statementRenderer};
+	\node [blockS, below of = imageStatR] (referenceR){referenceRenderer};
+	\node [blockS, left = of referenceR] (qualifierR){qualifierRenderer};
+	\node [cloud, left = of qualifierR] (mwsnak){mw.wikibase.renderSnak};
+	\node [blockS, below of = mwsnak] (labelR){labelRenderer};
+	\node [cloud, below of = labelR] (mwLabel){mw.wikibase.label};
+	\node [blockS, below of = referenceR] (snaksR){snaksRenderer};
+	
+    % Draw edges
+    \path [line] (er-render) -- (renderE);
+	\path [line] (renderE) -- (topImageR);
+	\path [line] (renderE) -- (descriptionR);
+	\path [line] (descriptionR) -- (mwdescr);
+	\path [line] (renderE) -- (statementListR);
+	\path [line] (renderE) -- (idListR);
+	\path [line] (statementListR) -- (labelR);
+	\path [line] (statementListR) -- (bestStatR);
+	\path [line] (idListR) -- (bestStatR);
+	\path [line] (labelR) -- (mwLabel);
+	\path [line] (bestStatR) -- (StatementR);
+	\path [line] (bestStatR) -- (imageStatR);
+	\path [line] (imageStatR) -- (referenceR);
+	\path [line] (imageStatR) -- (qualifierR);
+	\path [line] (imageStatR) -- (mwsnak);
+	\path [line] (StatementR) -- (referenceR);
+	\path [line] (StatementR) -- (qualifierR);
+	\path [line] (StatementR) -- (mwsnak);
+	\path [line] (qualifierR) -- (labelR);
+	\path [line] (referenceR) -- (labelR);
+	\path [line] (qualifierR) -- (snaksR);
+	\path [line] (referenceR) -- (snaksR);
+	\path [line] (snaksR) -- (mwsnak);
+	
+\end{tikzpicture}
+
+\rmfamily
