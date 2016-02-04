@@ -11,7 +11,9 @@ In order to match them, the renderer for the ArticlePlaceholder is called
 \end{center}
 Every renderer has getter and setter functions. Therefore every part of the display can be overwritten locally on Wikipedia. \\
 The Lua module on the Wikipedia in on the page \texttt{Module:AboutTopic}, which is called by the template \texttt{Template:AboutTopic}. In the module AboutTopic a user with the appropriate rights can call the get and set functions. \\
-Since Lua doesn't have objects, the renderer are all functions. 
+The renderer each contain a function to convert different parts of the item. The renderer are as decoupled as possible so that for example the \texttt{snaksRenderer} can be used by the \texttt{refererenceRenderer} as well as the \texttt{qualifierRenderer}. \\
+The Wikibase client provides a Lua Scribunto interface with modules to access the repository. Wherever possible, the functions provided were used. This way, the description renderer for example simply calls the \texttt{mw.wikibase.description} and passes the entity Id as a parameter. The \texttt{descriptionRenderer} of the ArticlePlacheolder's EntityRenderer is still needed since there must be a possibility for the user to overwrite these functions. Additionally a CSS class needs to be assigned to the result of Wikibase's description renderer in order to style it properly. \\
+The EntityRenderer module itself takes just the entity Id of the item an ArticlePlaceholder is created for. The Lua table for an entity is loaded in the renderEntity function. This table represents a whole entity with all its respective data. Therefore it is performance-wise the most expensive operation in the module. \\
 
 \begin{figure}[ht]
 	\centering
