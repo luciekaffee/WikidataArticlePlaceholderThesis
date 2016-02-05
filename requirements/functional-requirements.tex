@@ -1,4 +1,4 @@
-\section {Functional requirements}
+\chapter {Functional requirements}
 
 The functional requirements are based on the non-functional requirements and aim to realize those. Additional requirements are derived from the technical environment and its specifications. \\
 To be able to use the data of Wikidata, ArticlePlaceholder needs to be based on Wikibase and MediaWiki.
@@ -9,10 +9,10 @@ To conform with the technical specifications the extension is required to be res
 \\
 The requirements differ for the different stages of the deployment cycle. They are always built on top of each other but since the parts have different levels of importance we will focus on a very basic set up first and add up more features later on. Listed below are the requirements for the final system deployed to a Wikipedia. \todo{Maybe kill the whole Absatz} \\
 
-\subsection{Naming}
+\section{Naming}
 The special page should have a short name that is easy to remember. Calling the special page "Article Placeholder" would be confusing due to people expecting it to generate a whole article in that case. Therefore it is called "AboutTopic". \todo[color=green!40]{More reasoning}%
 
-\subsection{Display the article placeholder}
+\section{Display the article placeholder}
 The pages displaying the content of a Wikidata item focus on a clear differentiation between the layout of the placeholder and what a user-written article would look like. They still contain elements of the well-known Wikipedia layout. \\
 Therefore, the main image of the item is on the right side (for left to right languages) of the page where it would be in articles as well.\\
 \st{The core part of the page are the statement groups. Those consist of a property, one or multiple values, their qualifiers and references. \\
@@ -22,15 +22,15 @@ References can be found in their own section at the bottom of the page sticking 
 The identifier of an item should be in a distinct place in order to be emphasized and distinguishable from the other statements at the same time. They are listed below the main image of the article to the right of the statement groups.}
 The described layout is the default but it is very important to give the user control over everything and therefore let every part be user editable. \\
 
-\subsection{Localisation}
+\section{Localisation}
 It is important to have the whole extension localized from the beginning. Not only would it be hard to adjust it in the end but mainly this is the most important part about it- the extension being used by many international communities\todo[color=green!40]{rewrite this!!! shorter, more clear sentences!!!}%
 . Since the data on Wikidata is multilingual, this focuses more on aspects like labels on buttons and the name of the special page itself. \\
 
-\subsection{Discover article placeholder}
+\section{Discover article placeholder}
 \subsubsection{SpecialPage URL}
 A user is able to get to the article placeholder not only through the interface of the special page but also via a handy URL, that takes the item number as a parameter. Based on the defaults of MediaWiki and Wikibase, here is an example showing the use of the defaults used on MediaWiki and Wikibase: \colorbox{Gray}{\lstinline[basicstyle=\ttfamily\color{white}]|Special:AboutTopic/Q5279|} \todo{als requirement formulieren} \\
 
-\subsubsection{Search}
+\section{Search}
 To be able to discover an article placeholder while looking for a topic the generated pages are added to the search on Wikipedia. There are different places for the results in the search page. They could be attached to the bottom of the results or placed to the right of the regular search results. \\
 In order to reduce the displayed content to only desired entries related to a certain topic the search looks for items with corresponding labels and aliases. \todo{shorten this sentence} \\
 The results in the search should be limited to notable items. It is important to remark, that on Wikipedia projects the notability criterias \todo{explain!} are not necessarily the same as on Wikidata. \\
@@ -50,7 +50,7 @@ A red link (...) signifies a link to a page that is either non-existent or delet
 \\
 Red links are used a lot in Wikipedia to indicate an article, which is not there but should exist. Today it leads the user to a "create article" page. In the future it should rather bring them to an article placeholder, which offers them the option to create an article. Due to the high technical complexity of matching the titles of the red links to the Wikidata items, this topic is out of the scope for the thesis but will be an important part of the future development of the Article Placeholder extension. \todo{Ausfuehren: was ist schwierig an red links?}
 
-\subsection{Creation of an article from the article placehoder}
+\section{Creation of an article from the article placehoder}
 Starting at the article placeholder created by the extension the user might want to create an article to provide more information than the pure data from Wikidata offers and give this data context, that only natural language can provide. \\
 There are two options to do so considered for now: Creating an article from scratch or translate an existing article into the user's language. \\
 The challenge is to encourage editors to add a new article if appropriate and at the same time prevent vandalism, for example creating empty articles or stubs.\\ 
@@ -62,7 +62,7 @@ the priority is rather low. \\
 Using the resources \todo{ressources bennen!} available, the user should be able to translate the article from an existing article in another language on the same topic. \\
 In the future, it is intended to add the data provided by Wikidata to the editing page so the user can use it while writing the article. 
 
-\subsection{Ordering of statement groups}
+\section{Ordering of statement groups}
 The data in Wikidata is not ordered. The article placeholder are aimed at reader, who want to get an overview of the data and therefore only need the most important data on a topic and should not be overwhelmed with everything available. 
 \\
 To keep the control with the editors, there should be a list of properties maintained on-wiki. They are ordered by their importance or in logical groups depending on the topic. \\
@@ -70,15 +70,15 @@ To be easier to edit the list does not contain only the property numbers (such a
 \\
 \st{Since this might be important for future development of other extensions and might be interesting for the Wikibase software itself as well at some point, the parser for the property list page is in PHP to be accessible.} \todo{move this part to implementation!} \\
 
-\subsection {Identifier}
+\section {Identifier}
 Identifier differ from the other properties not only in their distinguished placement in the layout but also thematically. They are links to other databases. For the reader to be able to handily look up more information on other sites beside Wikimedia projects they need to be distinguishable from the other statements and always show up on the ArticlePlaceholder. Therefore they should not be included in the list of ordered statements. \\
 There is not a data type for identifier in Wikidata yet but it is planned to introduce one. \\
 Until the data type is deployed it is sufficient to have a static list of property ids in the extension, that lists all identifier used in Wikidata, that can be exchanged later with the proper handling of all statements with the identifier data type. \todo{shorten sentence!}
 
-\subsection{Caching}
+\section{Caching}
 Since the generated content pages will be accessed frequently \todo{numbers: WP page views per day} it will be necessary to implement some form of caching for them. With caching it would be possible to limit the amount of API requests to Wikidata, too, which will show an improvement in the performance. 
 
-\subsection {Unit tests}
+\section {Unit tests}
 Especially the main code in PHP should be covered completely by unit tests.\\
 It is necessary to set up continues integration according to the defaults of MediaWiki and Wikibase to make the code not only conform to coding conventions but also to run the unit test automatically. This will improve the time spent with code reviews and testing. \\
 This is not part of this thesis but is done in cooperation with the Wikidata team while working on the extension.
