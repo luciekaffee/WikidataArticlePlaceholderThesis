@@ -1,9 +1,23 @@
-\section{Ordering of statement groups}
+\subsection{Ordering of statement groups}
 
-To find a technical solution to this problem, there was a "Request for comment" page set up. \href{https://www.mediawiki.org/wiki/Requests_for_comment/Statement_group_ordering}{Requests for comment/Statement group ordering}
+To find a technical solution to this problem, there was a "Request for comment" page set up. \href{https://www.mediawiki.org/wiki/Requests_for_comment/Statement_group_ordering}{Requests for comment/Statement group ordering} \\
 
-The most important points are outlined there: \\
-All Property IDs are collected on one page, that is in the mediawiki namespace. 
+The collection of ordered property Ids are stored on one page in the \textit{mediawiki namespace}. This namespace ``is used to hold system messages and other important content'' \footnote{\href{https://www.mediawiki.org/wiki/Help:Namespaces\#MediaWiki}{Reference}}. It can only be edited by administrators. This page is called \texttt{MediaWiki:Wikibase-SortedProperties}. \\
+The code for the ordering is not merged yet since it was decided to make it part of the Wikibase code instead of only being in the extension. That offers the possibility to reuse the code without having to build up a dependency from Wikibase to the ArticlePlaceholder extension. \\
+\\
+For now, the page needs to exist on the local Wikipedia. If that's not the case, or if page is empty or filled with non-text content, the corresponding exception is thrown. For that purpose an \texttt{ArticlePlaceholderException} was created, which extends PHP's \texttt{RuntimeException} to add a message specific to the extension.\\
+The page name is a constant variable. \\
+In the class \texttt{PropertyOrderProvider} the page is parsed to a PHP array. In this array, the property Ids are the keys and the ordinal numbers the values. \\
 
-\href{https://www.mediawiki.org/wiki/Help:Namespaces#MediaWiki}{The MediaWiki namespace is used to hold system messages and other important content. For instance, the page MediaWiki:Edit (or MediaWiki:Vector-view-edit in the default "Vector" skin) contains the text that fills the "Edit" tab at the top of every page. If that page exists, it overrides the default content, which is "Edit". Similarly, MediaWiki:Common.css is the system message that holds the CSS code that is loaded for all users for each page. It has the special property that the entire namespace is fully protected and can only be edited by administrators.} 
-
+To get the content of the content of the page, the MediaWiki function \texttt{getNativeData()} is used. This page content is parsed in the function \texttt{parseList( \$pageContent )}. To remove all comments in the HTML multiple line comment style, the following regular expression is used.
+\begin{lstlisting}[frame=single]
+@<!--.*?-->@s
+\end{lstlisting}
+The \texttt{@} is used as delimiter. All comments matching this pattern are replaced with empty Strings. \\
+After removing all comments, all Strings matching the following regular expression are written into an array.
+\begin{lstlisting}[frame=single] 
+@^\*\s*([Pp]\d+)@m
+\end{lstlisting}
+The array is flipped, to have the properties as keys. This is important when it comes to using the array in Lua. \\
+An instance of the class is created in the \texttt{ArticlePlaceholderServices}. \\
+In the class \texttt{Scribunto\_LuaArticlePlaceholderLibrary} in the \texttt{ArticlePlaceholder\textbackslash{}Lua} namespace with the help of \texttt{ArticlePlaceholderServices} the array with the property order is returned in the function \texttt{getPropertyOrder}, which then can be called in the Lua module. This is explained in more detail in the Chapter \ref{including-lua}: \nameref{including-lua}.
