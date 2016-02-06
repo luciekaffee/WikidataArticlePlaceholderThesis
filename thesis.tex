@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt, oneside]{report}
+\documentclass[11pt]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage[dvipsnames]{xcolor}
@@ -10,7 +10,6 @@
 \usetikzlibrary{shapes,arrows,snakes}
 \usepackage{courier}
 \usepackage{graphicx}
-\usepackage[htt]{hyphenat}
 \usepackage{lineno}
 
 \lstset{basicstyle=\ttfamily,breaklines=true}
@@ -20,14 +19,14 @@
 \date{}
 
 \begin {document}
-%\linenumbers
+\linenumbers
 \maketitle
 \newpage
 
 \chapter*{Dedication}
-\include{disclaimer}
+\input{disclaimer}
 \chapter*{Abstract}
-\chapter*{Glossary}
+%\chapter*{Glossary}
 \newpage
 
 \tableofcontents
@@ -39,7 +38,6 @@
 \input{requirements/requirements}
 \newpage
 \input{implementation/implementation}
-
 \chapter{Conclusion and Outlook}
 \chapter{Appendix}
 	\section{Acknowledgement}
