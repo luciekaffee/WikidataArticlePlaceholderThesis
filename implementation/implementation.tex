@@ -1,7 +1,11 @@
 \chapter{Implementation}
 	
-	- extension registration in LocalSettings.php with the global variable \textbf{\$wgArticlePlaceholderImageProperty} for the image property (\href{https://www.mediawiki.org/wiki/Manual:Extension_registration}{[Manual:Extension Registration]})\\
-	\section{Setting up the extension}
+	Due to MediaWiki being written in PHP and requiring its extensions to be in the same language to use its functionality, the core part of the ArticlePlaceholder extension is written in PHP, too. The programming language PHP is ``a popular general-purpose scripting language that is especially suited to web development.'' \footnote{http://php.net/} \\
+	Therefore all parts, that need some services or work with the functionality of MediaWiki must be written in PHP- such as the special page for users to create an ArticlePlaceholder as well as the integration in the search page. \\
+	The ordering of statement groups is written mainly in PHP to be reusable. It could have been implemented in Lua, too, but then would have been almost exclusively useful for this extension. \\
+	The layout and display of the item on the Wikipedia, the core part from a users perspective, is realized with a Lua module. This module takes the function of a library by being able to be overwritten by users with setter functions and having getter functions. It is called from the special page with a Template -- \texttt{Template:AboutTopic} -- which itself contains only the call to the \texttt{Module:AboutTopic} Lua module's function \texttt{showData}. The named template and module are on the respective Wikipedia. \\
+
+	\input{implementation/setting-up}
 	\input{implementation/special-page}
 	\input{implementation/display}
 	\input{implementation/search}

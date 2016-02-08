@@ -1,0 +1,4 @@
+\section{Setting up the extension}
+	To enable and setup an extension in MediaWiki, the extension has to have a file called \texttt{ExtensionName.php}, which in this case would be \texttt{ArticlePlaceholder.php}. \texttt{ArticlePlaceholder.php} stores the setup instructions and contains declarations and definitions important to this extension. \\
+	To register the extension in MediaWiki, in the file \texttt{LocalSettings.php} the ArticlePlaceholder is set with \path{require_once( "$IP/extensions/ArticlePlaceholder/ArticlePlaceholder.php" );} \\
+	Additionally the extension registration needs the global variable \texttt{\$wgArticlePlaceholderImageProperty}. This is needed for the user installing the extension to set the image property of their repository. In the case of Wikidata this would be \textit{``image'' (P18)}. \footnote{\href{https://www.mediawiki.org/wiki/Manual:Extension_registration}{[Manual:Extension Registration]}}
