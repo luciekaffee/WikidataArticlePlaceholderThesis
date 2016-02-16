@@ -1,12 +1,12 @@
 \section{Deployment}
 
-To actually release the extension, a new component to MediaWiki, certain steps in cooperation with Wikimedia need to be done. 
-The release itself needs, according to \citet{deployment}, 
+Adding new components to a software needs, according to \citet{deployment}, 
 \begin{quote}
 	release, installation, activation, deactivation, update, and removal of components. These activities constitute a large and complex process that we refer to as software deployment.  
 \end{quote}
 
-In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. They have a schedule, which can be adjusted of a extension author's needs. Due to the author of the thesis to date does not have deployment rights, cooperation with Wikimedia staff was necessary in order to do the steps described in figure~\ref{fig:deployTimeline}. \\
+To deploy the ArticlePlaceholder extension to Wikipedia, coordination with Wikimedia staff and volunteers was needed. \\
+In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. They have a schedule, which can be adjusted of a extension author's needs. Due to the author does not have deployment rights on the Wikimedia cluster, cooperation with Wikimedia staff was necessary in order to do the steps described in Figure~\ref{fig:deployTimeline}. \\
 \begin{sidewaysfigure}
 	\todo[inline]{look into this more!}
 	\begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
@@ -44,7 +44,7 @@ In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. 
 		\draw (18,0) node[below=3pt] {} node[above=3pt] {\small more Wikipedias};
 		\draw (19.5,0) node[below=3pt] {\small sister projects} node[above=3pt] {};
 	\end{tikzpicture}
-    \caption{Time line of deployments}
+    \caption{Time line of ArticlePlaceholder deployment}
     \label{fig:deployTimeline}
 \end{sidewaysfigure}
 
@@ -54,19 +54,19 @@ From the beginning there was a test setup available on Wikimedia Labs\footnote{\
 	the Wikimedia Foundation (WMF)'s cloud computing environment for developing software for the Foundation's operations. It also hosts bots and tools maintained and used by the community to maintain the foundation's projects. 
 \end{quotation} \citep{wiki:03}
 Besides the bots and scripts running on Wikimedia Labs it is used for various tools and to test software by volunteers as well as WMF's staff.\todo{improve sentence} \\
-The test setup was established to give editors as well as the public a first insight into what the extension looks like and what features it offers and to make them a part of development. It is also aimed at starting a discussion on what can be improved in order to be adjusted to the community's needs.
+The test setup was established to give editors as well as the public a first insight into what the extension looks like, what features it offers, and to make them a part of development. It is also aimed at starting a discussion on what can be improved in order for it to be adjusted to the community's needs.
 
 \paragraph{Security review}
-To deploy an extension to the Wikimedia cluster, it is necessary to go through the process of the security review by the Security Engineer of the Wikimedia Foundation. \todo{in order to?}
+To deploy an extension to the Wikimedia cluster, it is necessary to go through a security review by a Security Engineer of the Wikimedia Foundation. \todo{in order to?}
   
 \paragraph{Beta Cluster}
 The Beta Cluster\footnote{\url{http://en.wikipedia.beta.wmflabs.org/wiki/Main_Page}} is the \textit{WMF integration environment} and used for testing. In order to deploy the extension there, someone with the appropriate deployment rights needed to do code review and then deploy the extension. First issues with a real Wikipedia cluster were identified and adjusted in this step. \\
-Parallel to this step, the communities of all Wikipedias were asked, whether any of them would be interested in being the first Wikipedia deploying the extension. Wikipedias interested were asked to open discussion pages to gather the support of the community. (For e-mail send to the \textit{Wikipedia Technical Ambassadors} mailing list, and an extract of the community survey pages see Appendix \ref{})
+Meanwhile the communities of all Wikipedias were asked, whether any of them would be interested in being the first Wikipedia to get the extension. Wikipedias interested were asked to open discussion pages to gather the support of the community. (For e-mail send to the \textit{Wikipedia Technical Ambassadors} mailing list, and an extract of the community survey pages see Appendix \ref{})
 
 \paragraph{Test Wikipedia}
-Test Wikipedia\footnote{\url{https://test.wikipedia.org/wiki/Main_Page}} is another test system by Wikimedia. It is connected to Test Wikidata\footnote{\url{https://test.wikidata.org/wiki/Wikidata:Main_Page}}. From a development perspective, this is the last step of deployment before enabling the extension on a real Wikipedia. This is also another chance to gain more attention and collect input before the Beta feature. Issues can be found and fixed before they break things on a Wikipedia, that is used by a community. \\
+Test Wikipedia\footnote{\url{https://test.wikipedia.org/wiki/Main_Page}} is a test setup and \textit{production cluster} by Wikimedia. It is connected to Test Wikidata\footnote{\url{https://test.wikidata.org/wiki/Wikidata:Main_Page}}. From a development perspective, this is the last step of deployment before enabling the extension on a real Wikipedia. This is also another chance to gain more attention and collect input before the Beta feature. Issues can be found and fixed before they break things on a Wikipedia, that is used by a community. \\
 \\
-These deployment were done in the scope of the thesis. The following deployments will need more adjustment and therefore are not part of the thesis but will follow in the near future. 
+These deployment were done in the scope of the thesis. The following steps will need more adjustment, communication, and preparation and therefore are not part of the thesis but will follow in the near future. 
 
 \paragraph{Beta Feature}
 Beta Features are functionalities that can be enabled by registered user in their preferences. 
@@ -78,11 +78,14 @@ The next step was to deploy the extension as a beta feature. While having certai
 After the first deploy as a beta feature, the feedback by the community needs to be evaluated and the extension needs to be adjusted accordingly. The adjusted beta feature needs not only to consider the feedback again but also to gain the support and trust of the community to be enabled on a Wikipedia by default.
 
 \paragraph{Deploy to a Wikipedia, enable by default}
-To have it actually deployed, it must match more requirements. Ideally it would be deployed on a Wikipedia, that has a limited amount of articles and editors first, to actually see if it fulfills the needs of the readers it is aiming at and accepted by the existing communities. 
+To have it actually deployed, the extension must implement the feedback and concerns collected before. Ideally it would be deployed on a Wikipedia, that has a limited amount of articles and editors first, to actually see if it fulfills the needs of the readers it is aiming at and accepted by the existing communities. 
 
 \paragraph{Deploy to more Wikipedias}
 It would be then necessary and possible to deploy it to more Wikipedias, that want to participate. 
 
 \paragraph{Deploy to sister projects}
+\begin{quote}
+\textbf{Wikimedia sister projects} are all the publicly available wikis operated by the Wikimedia Foundation, including Wikipedia. 
+\end{quote} \citep{}
 In the future, it would be great to adjust the extension in a way that it's useful to other Wikimedia projects as well. This is out of the scope for the thesis but something to keep in mind while developing. \\
 One of the possible next projects could be Wikivoyage due to its structural similarity to Wikipedia.
