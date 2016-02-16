@@ -2,10 +2,10 @@
 
 To find a technical solution to this problem, there was a "Request for comment" page set up. \citep{wiki:24} \\
 
-The collection of ordered property Ids are stored on one page in the \textit{mediawiki namespace}. This namespace ``is used to hold system messages and other important content''. \citep{wiki:17} It can only be edited by administrators. This page is called \texttt{\justify MediaWiki:Wikibase-SortedProperties}. Since the page name is set in the code, it is a constant variable. \\
-The code for the ordering is not merged yet since it was decided to make it part of the Wikibase code instead of only being in the extension. That offers the possibility to reuse the code without having to build up a dependency from Wikibase to the ArticlePlaceholder extension. \\
+The collection of ordered property Ids is stored on one page in the \textit{MediaWiki namespace}. This namespace ``is used to hold system messages and other important content''. \citep{wiki:17} It can only be edited by administrators. This page is called \texttt{\justify MediaWiki:Wikibase-SortedProperties}. Since the page name is set in the code, it is a constant variable. \\
+The code for the ordering is not merged yet since it was decided to make it part of Wikibase instead of only being only accessible in the ArticlePlaceholder extension. That gives the possibility to reuse the code without having to build up a dependency from Wikibase to the ArticlePlaceholder extension. \\
 \\
-For now, the page needs to exist on the local Wikipedia. If that's not the case, or if the page is empty or filled with non-text content, the corresponding exception is thrown. For that purpose an \texttt{\justify ArticlePlaceholderException} was created, which extends PHP's \texttt{\justify RuntimeException} to add a message specific to the extension.\\
+For now, the page needs to exist on the local Wikipedia. If that's not the case, or if the page is empty or filled with non-text content, the corresponding exception is thrown. For that purpose the \texttt{\justify ArticlePlaceholderException} was created, which extends PHP's \texttt{\justify RuntimeException} to among others add a message specific to the extension. \\
 In the class \texttt{\justify PropertyOrderProvider} the page is parsed to a PHP Array. In this Array, the property Ids are the keys and the ordinal numbers the values. \\
 
 To get the content of the content of the page, the MediaWiki function \texttt{\justify getNativeData()} is used. This page content is parsed in the function \texttt{\justify parseList( \$pageContent )}. To remove all comments in the HTML multiple line comment style, the following regular expression is used.

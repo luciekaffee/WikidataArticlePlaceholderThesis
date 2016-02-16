@@ -13,8 +13,8 @@
 	\node [block, right=2em of showTitle] (showLl) {showLang-uagelinks};
 	\node[block, below of=showCA] (passL) {pass label};
 	\node [block, right=2em of passL] (enableOOUI) {enableOOUI};
-	\node [block, below of=passL] (createB) {create Button};
-	\node [block, right of=createB] (JS) {JavaScript module};
+	\node [block, below of=passL] (JS) {JavaScript module};
+	\node [block, right=2em of JS] (createB) {create Button};
 	\node [block, below of=showLl] (sl) {getSitelinks ForItem};
 	\node [block, below of=sl] (lcpn) {Language Code:Page Name};
 	
@@ -26,8 +26,8 @@
 	\path [line] (showCA) -- (enableOOUI);
 	\path [line] (showCA) -- (passL);
 	\path [line] (enableOOUI) -- (createB);
-	\path [line] (passL) -- (createB);
-	\path [line] (createB) -- (JS);
+	\path [line] (enableOOUI) -- (JS);
+	\path [line] (passL) -- (JS);
 	\path [line] (showLl) -- (sl);
 	\path [line] (sl) -- (lcpn);
 \end{tikzpicture}

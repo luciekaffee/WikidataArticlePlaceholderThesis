@@ -23,7 +23,7 @@
     \node [error, right of=onWiki] (error) {\textcolor{red}{error}};
     \node [final, below of=onWiki] (redirect) {redirect};
     \node [final, right of=redirect] (placeholder) {show Placeholder};
-    \node [final, right of=placeholder] (JS) {JavaScript};
+    % \node [final, right of=placeholder] (JS) {JavaScript};
     % Draw edges
     \path [line] (execute) -- (showContent);
     \path [line] (showContent) -- (itemIdParam);
@@ -42,7 +42,7 @@
     % \path [line] (onWiki) -- (redirect);
     \draw (onWiki) -- (placeholder) node [midway, above, sloped, -latex'] (textnode) {no};
     % \path [line] (onWiki) -- (placeholder);
-    \path [line] (placeholder) -- (JS);
+    % \path [line] (placeholder) -- (JS);
 \end{tikzpicture}
 
 \rmfamily

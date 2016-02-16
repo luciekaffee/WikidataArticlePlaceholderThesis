@@ -1,7 +1,6 @@
 \section{Search}
-In order to be able to find results from the ArticlePlaceholder in the MediaWiki search, it was necessary to use the \texttt{\justify SearchHook} provided by MediaWiki. \citep{wiki:25} \\
-With the help of the \texttt{\justify TermIndexSearchInteractor} provided by Wikibase all items with labels or aliases matching the given search term are returned. The \texttt{\justify TermIndexSearchInteractor} and its respective tests needed to be moved from Wikibase repository to Wikibase library in order to be accessible for both, client and repository. This was done by the author in a commit to the Wikibase Gerrit repository. \citep{gerrit:01}
+In order to be able to find results from the ArticlePlaceholder in the MediaWiki search, it was necessary to use the \texttt{\justify SearchHookHandler} provided by MediaWiki. \citep{wiki:25} \\
+With the help of the \texttt{\justify TermIndexSearchInteractor} provided by Wikibase items with labels or aliases matching the given search term are displayed. The \texttt{\justify TermIndexSearchInteractor} and its respective tests needed to be moved from Wikibase repository to \textit{Wikibase lib}, which ``provides common functionality for Wikibase and Wikibase Client'' \citep{wiki:28}, in order to be accessible for both, client and repository. This was done by the author in a commit to the Wikibase Gerrit repository. \citep{gerrit:01}
 \\
-From those a string containing the label of the item, displayed as a link to the special page with the corresponding entity ID, and the description of the item in case there are multiple results.  \\
 If the result is not empty, the results are added to the search page as Wikitext at the bottom of the search results page. \\
 In the course of time it is planned to filter the search results to only display items, which are notable. Notable in this case would items, that have at least one statement and a certain number of sitelinks.

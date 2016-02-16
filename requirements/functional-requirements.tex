@@ -1,8 +1,8 @@
 \chapter {Functional requirements}
 
 The functional requirements are based on the non-functional requirements and aim to realize those. Additional requirements are derived from the technical environment and its specifications. \\
-To be able to use the data of Wikidata, ArticlePlaceholder needs to be based on Wikibase and MediaWiki.
-As MediaWiki is realized in PHP, the main part of the extension needs to make use of that language as well as the services provided by MediaWiki and Wikibase. \\
+To be able to display the data of Wikidata, ArticlePlaceholder needs to be based on Wikibase and MediaWiki.
+As MediaWiki is written in PHP, the main part of the extension needs to make use of that language as well as the services provided by MediaWiki and Wikibase. \\
 The programming language for scripts on Wikipedia is Lua. Therefore the parts that will be user-editable need to be written in Lua. This way they can be overwritten by the local communities. \\
 The default for the content pages presents the information and data in a useful way, and to make it visually appealing should make use of images when possible.
 For users without access to a Computer (as in the Scenario of Edha) the extension is required to be responsive and work on mobile devices. \\
@@ -25,12 +25,12 @@ A user is able to get to the ArticlePlaceholder not only through the interface o
 \subsection{Search}
 To be able to discover an ArticlePlaceholder while looking for a topic the generated pages are added to the search on Wikipedia. There are different places for the results in the search page. They could be attached to the bottom of the results or placed to the right of the regular search results. \\
 The results in the search should be limited to notable items. It is important to remark, that on Wikipedia projects the notability criterias are not necessarily the same as on Wikidata. \\
-Showing only notable items is especially important since article creation should only be encouraged when it makes sense in order to not have a lot of articles created, that would be deleted right away by other users. \\
+Showing only notable items is especially important since article creation should only be encouraged when it makes sense in order to not have articles created, that would be deleted by other users. \\
 Since it is hard to decide, which content is actually notable, the items appearing in the search should be limited to only the ones having at least two to three statements and either two sitelinks to the same project (like Wikipedia or Wikivoyage) or two to three statements over all. \\
 \\
-Catrin's scenario showed how a user would get from an ArticlePlaceholder. Therefore wherever possible the ArticlePlaceholder should link to existing Wikipedia articles. Due to the limitation of the data received from Wikidata, this is not in the scope of this thesis.\todo{move somewhere else?}
+Catrin's scenario showed how a user would start their research with an ArticlePlaceholder. Therefore wherever possible the ArticlePlaceholder should link to existing Wikipedia articles. Due to the limitation of the data received from Wikidata, this is not in the scope of this thesis.\todo{move somewhere else?}
 \\
-A lot of users will research information on web search engines such as Google and get to Wikipedia from the results. To make the data provided by the ArticlePlaceholder accessible for those users it will be necessary to index the generated content pages. \todo{numbers}
+A lot of users will research information on web search engines such as Google and get to Wikipedia from the results. To make the data provided by the ArticlePlaceholder accessible for those users it will be necessary to have them indexable the generated pages. \todo{numbers}
 
 \noindent\begin{minipage}{.4\textwidth}
 	\begin{figure}[H]\label{fig:CircleSearch}
@@ -42,7 +42,7 @@ A lot of users will research information on web search engines such as Google an
 \end{minipage}
 \hfill
 \begin{minipage}{0.5\textwidth}
-		As described in figure~\ref{fig:CircleSearch} a problem of the small Wikipedia projects is being stuck in that exact circle: Since they have few articles, they don't get a lot of attention via search engines such as Google, so they are not able to find new editors and therefore they do not have a lot of articles.
+		As described in figure~\ref{fig:CircleSearch} a problem of the small Wikipedia projects is being stuck in a circle: Since they have few articles, they don't get a lot of attention via search engines such as Google, so they are not able to find new editors and therefore they do not have a lot of articles.
 \end{minipage}
 \newline
 Making ArticlePlaceholder accessible for search engines is outside the scope of the thesis but will be an important point in the following development of the extension. 
@@ -58,28 +58,28 @@ Red links are used a lot in Wikipedia to indicate an article, which is not there
 \section{Creation of an article from the ArticlePlacehoder}
 Starting at the ArticlePlaceholder created by the extension the user might want to create an article to provide more information and give this data a context, that only natural language can provide. \\
 There are two options to do so which are considered for now: Creating an article from scratch or translate an existing article into the user's language. \\
-The challenge is to encourage editors to add a new article if appropriate and at the same time prevent vandalism, for example creating empty articles or stubs.\\ 
-The title for the page might differ from the label of the item due to the local Wikipedia's rules and costumes. Therefore a user must be able to enter a title for the page that does not exist on that Wikipedia yet. \\
+The challenge is to encourage editors to add a new article if appropriate and at the same time prevent vandalism, for example creating empty articles. \\ 
+The title for the article they want to create might differ from the label of the item due to the local Wikipedia's rules and customs. Therefore a user must be able to enter a title for the page that does not exist on that Wikipedia yet. \\
 After entering the title of the new article, the user is redirected to an empty editing page, where they can add their content. \\
 Using the content translation tool\footnote{\href{https://www.mediawiki.org/wiki/Content_translation}{Content translation tool}}, the user should be able to translate the article from an existing article in another language. This is not in the scope of the thesis, the focus for now is to create articles from scratch. \\
 In the future, it is intended to add the data provided by Wikidata to the editing page so the user can use it while writing the article. 
 
 \section{Ordering of statement groups}
-The data in Wikidata is not ordered. The ArticlePlaceholder are aimed at reader, who want to get an overview of the data and therefore only need the most important data on a topic and should not be overwhelmed with everything available. 
+The data in Wikidata is not ordered in a meaningful way. The ArticlePlaceholder are aimed at reader, who want to get an overview of the subject and therefore only need the most important data on a topic and should not be overwhelmed with everything available. 
 \\
-To keep the control with the editors, there should be a list of properties maintained on-wiki. They are ordered by their importance or in logical groups depending on the topic. \\
-The ordered list includes labels of the properties as well as their numbers for user not familiar with Wikidata. The editor can comment on each line to add additional information and help other editors understand the context of the property and its place in the ordered page. \\
+To keep the control with the editors, there should be a list of properties maintained on-wiki. They are ordered by their importance. \\
+The ordered list includes labels of the properties as well as their numbers for user not familiar with Wikidata. The list can be annotated with comments on each line to add additional information and help other editors understand the context of the property and its place in the ordered page. \\
 This list is only editable by administrators on the Wikipedia to reduce constant changing of information displayed. 
 
 \section {Identifier}
-Identifier differ from the other properties not only in their distinguished placement in the layout but also thematically. They are links to other databases. For the reader to be able to handily look up more information on other sites beside Wikimedia projects they need to be distinguishable from the other statements and always show up on the ArticlePlaceholder. Therefore they should not be included in the list of ordered statements. \\
-There is not a data type for identifier in Wikidata yet but it is planned to introduce one. \\
+Identifier differ from the other properties not only in their distinguished placement in the layout but also thematically. They are IDs used for the entity in other ontologies. For the reader to be able to handily look up more information on other sites beside Wikimedia projects they need to be distinguishable from the other statements and always show up on the ArticlePlaceholder. Therefore they should not be included in the list of ordered statements. \\
+There is not a data type for identifier in Wikidata yet but it is planned to introduce one in the same time this thesis is written. \\
 Until the data type is deployed, it is sufficient to have a static list of property ids in the extension. This list includes all identifiers used in Wikidata and can be exchanged later on with the proper handling of all statements with the identifier data type.
 
 \section{Caching}
-Since the generated content pages will be accessed frequently \todo{numbers: WP page views per day} it will be necessary to implement some form of caching for them. With caching it would be possible to limit the amount of API requests to Wikidata, too, which will show an improvement in the performance. This is not part of this thesis however.
+Since the generated content pages will be accessed frequently \todo{numbers: WP page views per day} it will be necessary to implement some form of caching for them. With caching it would be possible to limit the amount of requests to Wikidata services, too, which will show an improvement in the performance. This is not part of this thesis however.
 
 \section {Unit tests}
-Especially the main code in PHP should be covered completely by unit tests.\\
-It is necessary to set up continues integration according to the defaults of MediaWiki and Wikibase to make the code not only conform to coding conventions but also to run the unit test automatically. This will improve the time spent with code reviews and testing. \\
-This is not part of this thesis but is done in cooperation with the Wikidata team while working on the extension.
+Especially the main code in PHP should be covered completely by unit tests. \\
+It is necessary to set up continues integration in a way that it is integrated with MediaWiki and Wikibase to make the code not only conform to coding conventions but also to run the unit test automatically. This will reduce the time spent with code reviews and testing. \\
+This is not part of this thesis but is done in cooperation with the Wikidata team while working on the extension. Neither are the integration tests and tests for the Lua code in the scope of this thesis. \\ 

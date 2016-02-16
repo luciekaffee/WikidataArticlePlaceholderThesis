@@ -1,16 +1,15 @@
 \chapter{Implementation}
 	
 	Due to MediaWiki being written in PHP and requiring its extensions to be in the same language to use its functionality, the core part of the ArticlePlaceholder extension is written in PHP, as well. The programming language PHP is according to \citep{php:01} ``a popular general-purpose scripting language that is especially suited to web development.'' \\
-	Therefore all parts that need some services or work with the functionality of MediaWiki must be written in PHP--- such as the special page for users to create an ArticlePlaceholder as well as the integration in the search page. \\
-	The ordering of statement groups is written mainly in PHP to be reusable. It could have been implemented in Lua as well, but then would have been almost exclusively useful for this extension. \\
-	The layout and display of the item on the Wikipedia, the core part from a users perspective, is realized with a Lua module. This module takes the function of a library by being able to be overwritten by users with setter functions and having getter functions. It is called from the special page with a Template (\texttt{\justify Template:AboutTopic}). The template calls to the \texttt{\justify Module:AboutTopic}'s function \texttt{\justify showData}. The named template and module are on the respective language Wikipedia. \\
-	\todo[inline]{OOUI explanation! \href{https://www.mediawiki.org/wiki/OOjs\_UI}{OOjs\_UI}}
 	\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{diagrams/ArticlePlaceholderClassDiagram.png}
-	\caption{Class diagram of PHP classes}
-	\label{fig:ClassDiagramPHP}
+		\centering
+		\includegraphics[width=\textwidth]{diagrams/ArticlePlaceholderClassDiagram.png}
+		\caption{Class diagram of PHP classes}
+		\label{fig:ClassDiagramPHP}
 	\end{figure}
+	Therefore all parts that need services provided by MediaWiki or otherwise work with the functionality of MediaWiki must be written in PHP--- such as the special page for users to create an ArticlePlaceholder as well as the integration in the search. \\
+	The ordering of statement groups is written mainly in PHP to be reusable and even though it was developed for this extension will be part of the Wikibase code. It could have been implemented in Lua as well, but then would have been almost exclusively useful for this extension. \\
+	The layout and display logic of the ArticlePlaceholder on the Wikipedia, the most important part from a users perspective, has been implemented as a Lua module. This module is comparable with libraries in other programming languages since it is overwritable by users with setter and getter functions. It is invoked from the special page via a Template (\texttt{\justify Template:AboutTopic}). The template calls the \texttt{\justify Module:AboutTopic}'s function \texttt{\justify showData}. The named template and module are on the respective language Wikipedia. \\
 	\input{implementation/red-links}
 	\input{implementation/setting-up}
 	\input{implementation/special-page}
