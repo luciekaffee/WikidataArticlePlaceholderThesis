@@ -1,0 +1,6 @@
+\subsection{Style elemts (CSS)}
+
+In order to style the layout elements, CSS classes were assigned in the Lua module. Their looks as well as the create article button's look are adjusted in \texttt{ext.articleplaceholder.defaultDisplay.css}. 
+
+
+- responsive: ArticlePlaceholder.php

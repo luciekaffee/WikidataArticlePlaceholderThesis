@@ -1,16 +1,16 @@
 \section{Lua and Scribunto}
 
-Lua is an open-source scripting language. It is fast and leightweight and was used mainly in embedded systems and clients.\footnote{\href{http://www.lua.org/about.html}{Reference}} \\
-Lua is not object-oriented but due to its tables and meta tables can be easily adopted for multiple purposes. It is a dynamically typed language. It supports eight basic data types: nil, boolean value, number, userdata, function, thread, string, and table.\footnote{\href{http://www.lua.org/pil/2.html}{Reference}} Classic data structures such as Arrays can be represented with Lua's tables. \\
-Lua is used in MediaWiki with the \textit{Scribunto} extension. Scribunto ``[p]rovides a framework for embedding scripting languages into MediaWiki pages''\footnote{\href{https://www.mediawiki.org/wiki/Extension:Scribunto}{Reference}}. At the moment it only supports Lua. \\
-Scribunto allows MediaWiki users to write their own Lua modules in the \textit{Module} namespace. These can be invoked on any other Wiki Page (usually on \textit{Templates}) using \\
+Lua is an open-source scripting language. It is fast and leightweight and is used mainly in embedded systems and clients. \citep{lua:01} \\
+Lua is not object-oriented but due to its tables and meta tables can be easily adopted for multiple purposes. It is a dynamically typed language. It supports according to \citet[9]{luabook:01} eight basic data types: \textit{nil}, \textit{boolean}, \textit{number}, \textit{userdata}, \textit{function}, \textit{thread}, \textit{string}, and \textit{table}. Classic data structures such as \textit{Arrays} can be represented with Lua's tables. \\
+Lua is used in MediaWiki with the \textit{Scribunto} extension. Scribunto ``[p]rovides a framework for embedding scripting languages into MediaWiki pages'' states \citet{wiki:19}. At the moment it only supports Lua. \\
+Scribunto allows MediaWiki users to write their own Lua modules in the \texttt{\justify Module} namespace. These can be invoked on any other Wiki Page (usually on \textit{Templates}) using the following command.
 \begin{lstlisting}[frame=single] 
 {{#invoke:module name|function name|argument}}
 \end{lstlisting}
 
-In the case of a module called \textit{Module:AboutTopic} with the function \textit{showData} and a string parameter with an entity Id, calling the module on a Wiki page would look like the following. \\
+In the case of a module called \textit{Module:AboutTopic} with the function \textit{showData} and a string parameter with an entity Id, calling the module on a Wiki page would look like the following.
 \begin{lstlisting}[frame=single] 
 {{#invoke:AboutTopic|showData|Q42}}
 \end{lstlisting}
 
-The code is run only, when the page is parsed. That means, only when the page is edited the modules create output. Therefore modules can't handle dynamic user input. \footnote{\href{https://en.wikipedia.org/wiki/Wikipedia:Lua}{Reference}} Scribunto can parse Wikitext. 
+The code of the Lua modules is only run when the page is parsed. That means, only when the page is edited the modules create output. Therefore modules can't handle dynamic user input. \citep{wiki:20} Scribunto can parse Wikitext. 

@@ -1,3 +1,13 @@
-\section{Including Lua}\label{including-lua}
+\section{Including PHP in Lua}\label{including-lua}
+
+\todo[inline]{Callbacks!? and explain why Array returned}
+
+In order to pass the results of PHP classes to Lua functionality provided by Scribunto was used. \\
+The functions accessible by the Lua code are declared in the class \texttt{Scribunto\char`_LuaArticlePlaceholderLibrary}. This class extends \texttt{Scribunto\char`_LuaLibraryBase} in order to register the Lua interface. \\
+In order to get the image property set in \texttt{LocalSettings.php}, the globale variable \texttt{\$wgArticlePlaceholderImageProperty} is wrapped in an Array and returned in the function \texttt{getImageProperty()}. \todo{why in Array?}\\
+These PHP callbacks are copied from \texttt{mw\char`_interface} to the local variable \texttt{php}. From this variable the PHP functions of the Lua interface \texttt{Scribunto\char`_LuaArticlePlaceholderLibrary}. Therefore the image property ID can now be used in Lua as well by invoking \texttt{getImageProperty()} in \texttt{mw.ext.articleplaceholder.entityRenderer}. \\
+Getting the Array with the ordered properties requires a service, the \texttt{ArticlePlaceholderService}.It returns an instance of iteself. It's function \texttt{getPropertyOrderProvider()} returns an instance of the \texttt{PropertyOrderProvider} described in Chapter~\ref{ordering-stat}: \nameref{ordering-stat}.
+In \texttt{Scribunto\char`_LuaArticlePlaceholderLibrary} in the function \texttt{Scribunto\char`_LuaArticlePlaceholderLibrary} this service is called and the Integer Array of ordered properties is returned.\\
+Similar to the image property, the function can be invoked in the Lua module.
 
 \todo[inline]{The whole text}

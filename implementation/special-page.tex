@@ -1,22 +1,26 @@
 \section{SpecialPage}
 
-The SpecialPage SpecialAboutTopic.php uses multiple services provided by either Wikibase or MediaWiki. It also extends the class SpecialPage.php provided by MediaWiki to use its functionalities. \\
-To create a content page, it is necessary to first check, if there is actually an entity ID passed by the HTML form. In the case of a user arriving at the special page, the entity ID is obviously empty. Therefore the HTML of the special page would be created with the function create form, which adds HTML to the OuptputPage object and a form for the entity ID the user can enter. \\
-If there is an entity ID, it needs to be checked whether this entity actually exists. This is done with the entity lookup provided by Wikibase. If the entity ID does not exist, the user will see the HTML of createForm again with an error message.
-If the entity ID exists, the special page needs to check whether there is already an article on this Wiki for the item. This is done with the siteLinkLoopup service by Wikibase. The function getArticleOnWiki is called and returns the title if there is an article or null if not. The user is redirected with the redirect function of the OutputPage class to the article if it exists. \todo{this sentence is chaos!} \\
+The SpecialPage \texttt{\justify Special:AboutTopic} uses multiple services provided by either Wikibase or MediaWiki. It also extends the class \texttt{\justify SpecialPage.php} provided by MediaWiki to use its functionalities. The class is called \texttt{\justify SpecialAboutTopic} and can be found in the namespace \texttt{\justify ArticlePlaceholder\\Specials}. \\
+From a users perspective there are two ways of passing an entity ID to the extension. There is the option to do that directly via the URL, for exaple in the following way. 
+\begin{center}
+\colorbox{Gray}{\lstinline[basicstyle=\ttfamily\color{white}]|Special:AboutTopic/Q5279|}
+\end{center}
+The other option is to enter the ID on the SpecialPage. The SpecialPage is created by an HTML form in the function \texttt{\justify createForm()}, which adds HTML to the \texttt{\justify OutputPage} object provided by MediaWiki. //
+When the entity ID is passed, there is a check whether this entity actually exists. This is done with the \texttt{\justify EntityLookup} provided by Wikibase. \\ If the entity ID does not exist, the user will get to the HTML output of \texttt{\justify createForm} again with an error message. \\
+If the entity ID exists, the SpecialPage needs to check whether there is already an article on this Wiki for the item. This is done with the \texttt{\justify SiteLinkLookup} service by Wikibase. The function \texttt{\justify getArticleOnWiki( \$entityId)} is called. In case of an article existing it returns the title of that article. The user is then forwarded to that article with the \texttt{\justify redirect( \$url )} function of the \texttt{\justify OutputPage} class.
 The way of the code to show a placeholder is shown in Figure~\ref{fig:createpl}. 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
-	\input{implementation/special-page-create-placeholder-flowchart}
+	\input{diagrams/special-page-create-placeholder-flowchart}
 	\caption{Flowchart for creating a placeholder}
 	\label{fig:createpl}
 \end{figure}
 
-Otherwise an article placeholder is created. In order to do this, a template on the Wiki is invoked, which calls the Lua module. Additionally a OOUI is enable in order to include the JavaScript module. The label of the item is passed to the JavaScript module. The label is used in PHP to set the title of the page, too. The link to other Wikipedia language versions (language links) are set in PHP as well as the links to other projects. The sitelinks are read from the SiteStore service provided by Wikibase. They are assembled from their language code and the page name with a colon in between. \\
+If there is no article for the passed item, an ArticlePlaceholder is created. In order to do this, a template on the Wiki is invoked, which calls the Lua module. Additionally \texttt{\justify OOUI} is enable in order to include the JavaScript module. The label of the item is passed to the JavaScript module \texttt{\justify ext.articleplaceholder.createArticle}. The label is used in PHP to set the title of the page, too. The link to other Wikipedia language versions (language links) are set in PHP. The \textit{sitelinks} are read from the \texttt{\justify SiteStore} service provided by Wikibase. They are assembled from their language code and the page name with a colon in between. For example, the page linking to English Wikipedia article on ``Ada Lovelace'' would be \texttt{\justify en:Ada Lovelace}\\
 Showing a placeholder can be described as in the chart in Figure~\ref{fig:showpl}. 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
-	\input{implementation/special-page-show-placeholder-flowchart}
+	\input{diagrams/special-page-show-placeholder-flowchart}
 	\caption{Flowchart for showing a placeholder}
 	\label{fig:showpl}
 \end{figure}

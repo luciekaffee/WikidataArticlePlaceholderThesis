@@ -1,11 +1,11 @@
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+\tikzstyle{block} = [rectangle, draw, 
     text width=5em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{error} = [draw, ellipse,fill=red!20, node distance=3cm,
+\tikzstyle{error} = [draw, ellipse, node distance=3cm,
     minimum height=2em]
 \tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse,fill=yellow!20, node distance=3cm,
+\tikzstyle{cloud} = [draw, ellipse, node distance=3cm,
     minimum height=2em]
-\tikzstyle{final} = [diamond, draw, fill=green!20, 
+\tikzstyle{final} = [diamond, draw, 
     text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
 
 \sffamily
@@ -20,7 +20,7 @@
     \node [final, right of=createForm] (Html) {HTML};
     \node [cloud, left of=createForm] (hasEntity) {hasEntity?};
     \node [cloud, below of=hasEntity] (onWiki) {articleOnWiki?};
-    \node [error, right of=onWiki] (error) {error};
+    \node [error, right of=onWiki] (error) {\textcolor{red}{error}};
     \node [final, below of=onWiki] (redirect) {redirect};
     \node [final, right of=redirect] (placeholder) {show Placeholder};
     \node [final, right of=placeholder] (JS) {JavaScript};

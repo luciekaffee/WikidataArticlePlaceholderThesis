@@ -1,18 +1,31 @@
 \documentclass[11pt]{report}
 
+\usepackage[natbibapa]{apacite}
 \usepackage[utf8]{inputenc}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{todonotes}
 \usepackage{listings}
 \usepackage{soul}
+\usepackage{rotating}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,snakes}
 \usepackage{courier}
 \usepackage{graphicx}
+\usepackage{float}
+\usepackage{microtype}
 \usepackage{lineno}
+\usepackage[onehalfspacing]{setspace}
 
-\lstset{basicstyle=\ttfamily,breaklines=true}
+%\lstset{basicstyle=\ttfamily,breaklines=true}
+
+\newcommand*\justify{%
+  \fontdimen2\font=0.4em% interword space
+  \fontdimen3\font=0.2em% interword stretch
+  \fontdimen4\font=0.1em% interword shrink
+  \fontdimen7\font=0.1em% extra space
+  \hyphenchar\font=`\-% allowing hyphenation
+}
 
 \title{Generating Article Placeholders from Wikidata for Wikipedia:\\Increasing access to free and open knowledge}
 \author{Lucie-Aim\'{e}e Kaffee}
@@ -44,5 +57,7 @@
 	\section{Diagrams}
 	\section{Code}
 	\section{References}
+	\bibliographystyle{apacite}
+	\bibliography{references}
 
 \end {document}

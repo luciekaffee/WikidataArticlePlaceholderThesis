@@ -1,4 +1,4 @@
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+\tikzstyle{block} = [rectangle, draw, 
     text width=5em, text centered, rounded corners, minimum height=4em]
 \tikzstyle{line} = [draw, -latex']
 
@@ -12,7 +12,7 @@
 	\node [block, right=2em of callTemp] (showTitle) {showTitle};
 	\node [block, right=2em of showTitle] (showLl) {showLang-uagelinks};
 	\node[block, below of=showCA] (passL) {pass label};
-	\node [block, left=2em of passL] (enableOOUI) {enableOOUI};
+	\node [block, right=2em of passL] (enableOOUI) {enableOOUI};
 	\node [block, below of=passL] (createB) {create Button};
 	\node [block, right of=createB] (JS) {JavaScript module};
 	\node [block, below of=showLl] (sl) {getSitelinks ForItem};
