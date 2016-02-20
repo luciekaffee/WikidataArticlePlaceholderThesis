@@ -6,7 +6,7 @@ Adding new components to a software needs, according to \citet{deployment},
 \end{quote}
 
 To deploy the ArticlePlaceholder extension to Wikipedia, coordination with Wikimedia staff and volunteers was needed. \\
-In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. They have a schedule, which can be adjusted of a extension author's needs. Due to the author does not have deployment rights on the Wikimedia cluster, cooperation with Wikimedia staff was necessary in order to do the steps described in Figure~\ref{fig:deployTimeline}. \\
+In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. They have a schedule, which can be adjusted to an extension author's needs. Because the author does not have deployment rights on the Wikimedia cluster, cooperation with Wikimedia staff was necessary in order to do the steps described in Figure~\ref{fig:deployTimeline}, which describes the deployment process. \\
 \begin{sidewaysfigure}
 	\todo[inline]{look into this more!}
 	\begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
@@ -15,17 +15,17 @@ In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. 
 		\draw[snake] (2,0) -- (4,0);
 		\draw (4,0) -- (5,0);
 		\draw[snake] (5,0) -- (7,0);
-		\draw (7,0) -- (8,0);
-		\draw[snake] (8,0) -- (10,0);
-		\draw (10,0) -- (12,0);
-		\draw[snake] (12,0) -- (14,0);
-		\draw (14,0) -- (16,0);
-		\draw[snake] (16,0) -- (18,0);
-		\draw (18,0) -- (19.5,0);
+		\draw (7,0) -- (9,0);
+		\draw[snake] (9,0) -- (11,0);
+		\draw (11,0) -- (13,0);
+		\draw[snake] (13,0) -- (15,0);
+		\draw (15,0) -- (17,0);
+		\draw[snake] (17,0) -- (19,0);
+		\draw (19,0) -- (19.5,0);
 		
 
 		% draw vertical lines
-		\foreach \x in {0,1.5,4.5,7.5,10.5,12,13.5,15,16.5,18,19.5}
+		\foreach \x in {0,1.5,4.5,7.5,10.5,13.5,16.5,19.5}
 			\draw (\x cm,3pt) -- (\x cm,-3pt);
 
 		% draw nodes
@@ -40,7 +40,7 @@ In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. 
 		\draw (12,0) node[below=3pt] {} node[above=3pt] {\small feedback};
 		\draw (13.5,0) node[below=3pt] {\small beta feature 2} node[above=3pt] {};
 		\draw (15,0) node[below=3pt] {} node[above=3pt] {\small feedback};
-		\draw (16.5,0) node[below=3pt] {\small enable} node[above=3pt] {};
+		\draw (16.5,0) node[below=3pt] {\small enable on 1st WP} node[above=3pt] {};
 		\draw (18,0) node[below=3pt] {} node[above=3pt] {\small more Wikipedias};
 		\draw (19.5,0) node[below=3pt] {\small sister projects} node[above=3pt] {};
 	\end{tikzpicture}
@@ -51,10 +51,10 @@ In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. 
 \paragraph{Test system}
 From the beginning there was a test setup available on Wikimedia Labs\footnote{\url{articleplaceholder.wmflabs.org/mediawiki}}. Wikimedia Labs is 
 \begin{quotation}
-	the Wikimedia Foundation (WMF)'s cloud computing environment for developing software for the Foundation's operations. It also hosts bots and tools maintained and used by the community to maintain the foundation's projects. 
+	the Wikimedia Foundation (WMF)'s cloud computing environment for developing software for the Foundation's operations. It also hosts bots and tools maintained and used by the community to maintain the [F]oundation's projects. 
 \end{quotation} \citep{wiki:03}
 Besides the bots and scripts running on Wikimedia Labs it is used for various tools and to test software by volunteers as well as WMF's staff.\todo{improve sentence} \\
-The test setup was established to give editors as well as the public a first insight into what the extension looks like, what features it offers, and to make them a part of development. It is also aimed at starting a discussion on what can be improved in order for it to be adjusted to the community's needs.
+The test setup was established to give editors as well as the public a first insight into what the extension looks like, what features it offers, and to make them a part of development. It also aims to start a discussion on what can be improved in order for it to be adjusted to the community's needs.
 
 \paragraph{Security review}
 To deploy an extension to the Wikimedia cluster, it is necessary to go through a security review by a Security Engineer of the Wikimedia Foundation. \todo{in order to?}
@@ -64,28 +64,28 @@ The Beta Cluster\footnote{\url{http://en.wikipedia.beta.wmflabs.org/wiki/Main_Pa
 Meanwhile the communities of all Wikipedias were asked, whether any of them would be interested in being the first Wikipedia to get the extension. Wikipedias interested were asked to open discussion pages to gather the support of the community. (For e-mail send to the \textit{Wikipedia Technical Ambassadors} mailing list, and an extract of the community survey pages see Appendix \ref{})
 
 \paragraph{Test Wikipedia}
-Test Wikipedia\footnote{\url{https://test.wikipedia.org/wiki/Main_Page}} is a test setup and \textit{production cluster} by Wikimedia. It is connected to Test Wikidata\footnote{\url{https://test.wikidata.org/wiki/Wikidata:Main_Page}}. From a development perspective, this is the last step of deployment before enabling the extension on a real Wikipedia. This is also another chance to gain more attention and collect input before the Beta feature. Issues can be found and fixed before they break things on a Wikipedia, that is used by a community. \\
+Test Wikipedia\footnote{\url{https://test.wikipedia.org/wiki/Main_Page}} is a test setup and \textit{production cluster} by Wikimedia. It is connected to Test Wikidata\footnote{\url{https://test.wikidata.org/wiki/Wikidata:Main_Page}}. From a development perspective, this is the last step of deployment before enabling the extension on a real Wikipedia. This is also another chance to gain more attention and collect input before the Beta feature. Issues can be found and fixed before they break things on a Wikipedia, that is used by a community to do their daily work. \\
 \\
 These deployment were done in the scope of the thesis. The following steps will need more adjustment, communication, and preparation and therefore are not part of the thesis but will follow in the near future. 
 
 \paragraph{Beta Feature}
-Beta Features are functionalities that can be enabled by registered user in their preferences. 
+Beta Features are experimental functionalities that can be enabled by registered user in their preferences. 
 \begin{quotation}
 	The primary purpose of Beta Features is to allow for Wikimedia designers and engineers (from the Wikimedia Foundation and community alike) to roll out technical improvements in an environment where large numbers of users can test, give feedback, and use these features in real-world settings.
 \end{quotation} \citep{wiki:04}
 
 The next step was to deploy the extension as a beta feature. While having certain requirements for the test set up, the beta feature was supposed to be actually used by the community and therefore needed to fulfill more requirements, building up on what was already archived in the step before. \\
-After the first deploy as a beta feature, the feedback by the community needs to be evaluated and the extension needs to be adjusted accordingly. The adjusted beta feature needs not only to consider the feedback again but also to gain the support and trust of the community to be enabled on a Wikipedia by default.
+After the first deploy as a beta feature, the feedback by the community needs to be evaluated and the extension needs to be adjusted accordingly. The adjusted beta feature needs not only to consider the feedback again but also to gain the support and trust of the community to be enabled on a Wikipedia by default so all readers can benefit from it.
 
 \paragraph{Deploy to a Wikipedia, enable by default}
 To have it actually deployed, the extension must implement the feedback and concerns collected before. Ideally it would be deployed on a Wikipedia, that has a limited amount of articles and editors first, to actually see if it fulfills the needs of the readers it is aiming at and accepted by the existing communities. 
 
 \paragraph{Deploy to more Wikipedias}
-It would be then necessary and possible to deploy it to more Wikipedias, that want to participate. 
+It would then be possible and necessary to deploy it to more Wikipedias, that want to participate. 
 
 \paragraph{Deploy to sister projects}
 \begin{quote}
 \textbf{Wikimedia sister projects} are all the publicly available wikis operated by the Wikimedia Foundation, including Wikipedia. 
-\end{quote} \citep{}
+\end{quote} \citep{wiki:29}
 In the future, it would be great to adjust the extension in a way that it's useful to other Wikimedia projects as well. This is out of the scope for the thesis but something to keep in mind while developing. \\
 One of the possible next projects could be Wikivoyage due to its structural similarity to Wikipedia.
