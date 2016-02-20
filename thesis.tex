@@ -1,7 +1,9 @@
 \documentclass[11pt]{report}
 
 \usepackage[natbibapa]{apacite}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{todonotes}
@@ -51,11 +53,8 @@
 \input{requirements/requirements}
 \newpage
 \input{implementation/implementation}
-input{conclusion}
-\chapter{Appendix}
-	\section{Acknowledgement}
-	\include{appendix-diagrams}
-	\section{Code}
+\input{conclusion}
+\input{appendix/appendix}
 
 \bibliographystyle{apacite}
 \bibliography{references}
