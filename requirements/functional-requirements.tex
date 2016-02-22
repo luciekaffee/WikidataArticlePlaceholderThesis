@@ -75,16 +75,15 @@ This list is only editable by administrators on the Wikipedia so as to reduce co
 This list is then used to order and filter the statements on each ArticlePlaceholder page. 
 
 \section {Identifier}
-Identifiers differ from the other properties not only in their distinguished placement in the layout but also thematically. They are IDs used for the entity in other ontologies. Therefore they should not be included in the list of ordered statements. \\
-For the reader to be able to conveniently look up more information on other sites beside Wikimedia projects they need to be distinguishable from the other statements and always show up on the ArticlePlaceholder. \\
+Identifiers are IDs used for the entity in other ontologies. For the reader to be able to conveniently look up more information on sites other than Wikimedia projects, identifiers need to be distinguishable from the other statements also in the layout, and always show up on the ArticlePlaceholder. To always be present they should not be included in the list of ordered statements. \\
 \\
-There was not a data type for identifier in Wikidata while the extension was developed but it is introduce and deployed now. \\
-Until the data type was deployed, it was sufficient to have a static list of property IDs in the extension. This list includes all identifiers used in Wikidata and can be exchanged later on with the proper handling of all statements with the identifier data type.
+There was no data type for identifiers in Wikidata while the extension was developed, but it was introduced and is deployed now. \\
+Until the data type was deployed, it was sufficient to have a static list of property IDs in the extension. This list includes all identifiers used in Wikidata, and will be exchanged with the proper handling of all statements with the identifier data type.
 
 \section{Caching}
-Since the generated content pages will be accessed frequently \todo{numbers: WP page views per day} it will be necessary to implement some form of caching for them. With caching it would be possible to limit the amount of requests to Wikidata services, too, which will show an improvement in the performance. This is not part of this thesis however.
+Since the generated content pages will be accessed frequently, \todo{numbers: WP page views per day} it will be necessary to implement some form of caching for them. With caching it would be possible to limit the amount of requests to Wikidata services too, which will show an improvement in the performance. This is not part of this thesis however.
 
 \section {Unit tests}
-Especially the main code in PHP should be covered completely by unit tests. \\
-It is necessary to set up continues integration in a way that it is integrated with MediaWiki and Wikibase to make the code not only conform to coding conventions but also to run the unit test automatically. This will reduce the time spent with code reviews, testing and bug fixing. \\
-This is not part of this thesis but is done in cooperation with the Wikidata team while working on the extension. Neither are the integration tests and tests for the Lua code in the scope of this thesis. \\ 
+It is especially important for the main code in PHP to be covered completely by unit tests. \\
+It is necessary to set up continuous integration in a way that is integrated with MediaWiki and Wikibase in order not only to make the code conform to coding conventions, but also to be able to run the unit tests automatically. This will reduce the time spent in code reviews, testing and bug fixing. \\
+This is not part of this thesis but is done in cooperation with the Wikidata team while working on the extension - and nor do the integration tests and tests for the Lua code fall within the scope of this thesis. \\ 
