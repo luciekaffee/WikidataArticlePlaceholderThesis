@@ -1,17 +1,18 @@
 \section{SpecialPage}
 
-The SpecialPage \texttt{\justify Special:AboutTopic} uses multiple services provided by either Wikibase or MediaWiki. It also extends the class \texttt{\justify SpecialPage} provided by MediaWiki. The class is called \texttt{\justify SpecialAboutTopic} and can be found in the namespace \texttt{\justify ArticlePlaceholder\textbackslash{}Specials}. \\
+The SpecialPage \texttt{\justify Special:AboutTopic} uses multiple services provided either by Wikibase or MediaWiki. It also extends the class \texttt{\justify SpecialPage} provided by MediaWiki. The class is called \texttt{\justify SpecialAboutTopic} and can be found in the namespace \texttt{\justify ArticlePlaceholder\textbackslash{}Specials}. \\
 The SpecialPage serves two purposes: It creates the form for the SpecialPage itself, and is used to display the ArticlePlaceholder. \\
 From a user's perspective there are two ways of passing an entity ID to the extension. 
 The first option is to enter the ID on the SpecialPage. The SpecialPage is created by an HTML form in the function \texttt{\justify createForm()}, which adds HTML to the \texttt{\justify OutputPage} object provided by MediaWiki. \\
-When the entity ID is passed, there is a check whether this entity actually exists. This is done with the \texttt{\justify EntityLookup} provided by Wikibase. \\ If the entity ID does not exist, the user will get the form again with an additional error message. \\
+When the entity ID is passed, there is a check with the \texttt{\justify EntityLookup} provided by Wikibase whether this entity actually exists. \\ 
+If the entity ID does not exist, the user will get the form again with an additional error message. \\
 \\
 The second option to get to an ArticlePlaceholder is to pass the ID directly via the URL, for example in the following way.
 \begin{center}
 \colorbox{Gray}{\lstinline[basicstyle=\ttfamily\color{white}]|Special:AboutTopic/Q5279|}
 \end{center}
 
-If the entity ID exists, the SpecialPage needs to check whether there is already an article on this Wiki for the item. This is done with the \texttt{\justify SiteLinkLookup} service by Wikibase. The function \texttt{\justify getArticleOnWiki( \$entityId)} is called. When an article exists, it returns the title of that article. The user is then forwarded to that article with the \texttt{\justify redirect( \$url )} function of the \texttt{\justify OutputPage} class.
+If the entity ID exists, the SpecialPage needs to check with the \texttt{\justify SiteLinkLookup} service by Wikibase whether there is already an article on this Wiki for the item. The function \texttt{\justify getArticleOnWiki( \$entityId)} is called. When an article exists, it returns the title of that article. The user is then forwarded to that article with the \texttt{\justify redirect( \$url )} function of the \texttt{\justify OutputPage} class.
 The flowchart for the described code can be seen in Figure~\ref{fig:createpl}. 
 \begin{figure}[H]
 	\centering

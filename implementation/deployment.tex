@@ -46,10 +46,7 @@ In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. 
 \end{sidewaysfigure}
 
 \paragraph{Test system} ~\\
-From the beginning there was a test setup available on Wikimedia Labs\footnote{\url{articleplaceholder.wmflabs.org/mediawiki}}. Wikimedia Labs is 
-\begin{quotation}
-	the Wikimedia Foundation (WMF)'s cloud computing environment for developing software for the Foundation's operations. It also hosts bots and tools maintained and used by the community to maintain the [F]oundation's projects. 
-\end{quotation} \citep{wiki:03}
+From the beginning there was a test setup available on Wikimedia Labs\footnote{\url{articleplaceholder.wmflabs.org/mediawiki}}. Wikimedia Labs is ``the Wikimedia Foundation (WMF)'s cloud computing environment for developing software for the Foundation's operations. It also hosts bots and tools maintained and used by the community to maintain the [F]oundation's projects'' \citep{wiki:03}.
 Besides the bots and scripts running on it, Wikimedia Labs is used for various tools and to test software by both volunteers and WMF staff. \\
 \\
 The test setup was established to give editors and the public a first insight into what the extension looks like, what features it offers, and to make them a part of development. It also aims to start a discussion on what can be improved in order for it to be adjusted to the community's needs.
@@ -58,19 +55,19 @@ The test setup was established to give editors and the public a first insight in
 To deploy an extension to the Wikimedia cluster, it is necessary to go through a security review by a Security Engineer of the Wikimedia Foundation. \todo{in order to?}
   
 \paragraph{Beta Cluster} ~\\
-The Beta Cluster\footnote{\url{http://en.wikipedia.beta.wmflabs.org/wiki/Main_Page}} is the \textit{WMF integration environment} and used for testing. In order to deploy the extension there, someone with the appropriate deployment rights needed to do code review and then deploy the extension. First issues with a real Wikipedia cluster were identified and adjusted in this step. \\
-Meanwhile the communities of all Wikipedias were asked whether any of them would be interested in being the first Wikipedia to get the extension. Wikipedias interested were asked to open discussion pages to gather the support of the community. (For the email sent to the to the \textit{Wikipedia Technical Ambassadors} mailing list, and an extract of the following discussion on the community survey pages see Appendix~\ref{community}: \nameref{community}.)
+The Beta Cluster\footnote{\url{http://en.wikipedia.beta.wmflabs.org/wiki/Main_Page}} is the \textit{WMF integration environment} and used for testing. To deploy the extension there, someone with the appropriate deployment rights needed to do code review and then deploy the extension. First issues with a real Wikipedia cluster were identified and adjusted in this step. \\
+Meanwhile the communities of all Wikipedias were asked whether any of them would be interested in being the first Wikipedia to get the extension. Interested Wikipedia communities were asked to start discussion pages to gather the support of the community. (For the email sent to the to the \textit{Wikipedia Technical Ambassadors} mailing list, and an extract of the following discussion on the community survey pages see Appendix~\ref{community}: \nameref{community}.)
 
 \paragraph{Test Wikipedia} ~\\
 Test Wikipedia\footnote{\url{https://test.wikipedia.org/wiki/Main_Page}} is a test setup and \textit{production cluster} by Wikimedia. It is connected to Test Wikidata\footnote{\url{https://test.wikidata.org/wiki/Wikidata:Main_Page}}. From a development perspective, this is the last step of deployment before enabling the extension on a real Wikipedia. This is also another chance to gain more attention and collect input before the Beta Feature stage. Issues can be found and fixed before they break things on a Wikipedia, that is used by a community to do their daily work. \\
 \\
-The above deployments were done in the scope of the thesis. The following steps will need more adjustment, communication and preparation, and therefore are not part of the thesis but will follow in the near future. 
+The previous deployments were done in the scope of the thesis. The following steps will need more adjustment, communication and preparation, and therefore are not part of the thesis but will follow in the near future. 
 
 \paragraph{Beta Feature} ~\\
 Beta Features are experimental functionalities that can be enabled by registered users in their preferences. 
 \begin{quotation}
-	The primary purpose of Beta Features is to allow for Wikimedia designers and engineers (from the Wikimedia Foundation and community alike) to roll out technical improvements in an environment where large numbers of users can test, give feedback, and use these features in real-world settings.
-\end{quotation} \citep{wiki:04}
+	``The primary purpose of Beta Features is to allow for Wikimedia designers and engineers (from the Wikimedia Foundation and community alike) to roll out technical improvements in an environment where large numbers of users can test, give feedback, and use these features in real-world settings.'' \citep{wiki:04}
+\end{quotation} 
 
 The next step will be to deploy the extension as a beta feature. While having certain requirements for the test setup, the beta feature is supposed to be actually used by the community and therefore will have to fulfill more requirements, building on what was already achieved in the steps before. \\
 After the first deploy as a beta feature, the feedback from the community needs to be evaluated and the extension needs to be adjusted accordingly. The adjusted beta feature needs not only to consider the feedback again but also to gain the support and trust of the community to be enabled on a Wikipedia by default.
@@ -83,8 +80,8 @@ It would then be possible to deploy it to any other Wikipedias that wanted to pa
 
 \paragraph{Deploy to sister projects} ~\\
 \begin{quote}
-\textbf{Wikimedia sister projects} are all the publicly available wikis operated by the Wikimedia Foundation, including Wikipedia. 
-\end{quote} \citep{wiki:29}
+``\textbf{Wikimedia sister projects} are all the publicly available wikis operated by the Wikimedia Foundation, including Wikipedia.'' \citep{wiki:29}
+\end{quote}
 
 In the future, it would be great to adjust the extension so as to make it useful to other Wikimedia projects as well. This is beyond the scope of the thesis but something to keep in mind during development. \\
 One possible forthcoming project could be Wikivoyage, due to its structural similarity to Wikipedia.

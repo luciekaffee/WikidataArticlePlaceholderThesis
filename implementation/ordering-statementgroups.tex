@@ -1,9 +1,9 @@
 \section{Ordering of statement groups}\label{ordering-stat}
 
-To find a technical solution to this problem, there was a "Request for comment" page set up. \citep{wiki:24} \\
+To find a technical solution to this problem, there was a "Request for comment" page set up \citep{wiki:24}. \\
 
-The collection of ordered property IDs is stored on one page in the \textit{MediaWiki namespace}. This namespace ``is used to hold system messages and other important content''. \citep{wiki:17} It can be edited only by administrators. This page is called \texttt{\justify MediaWiki:Wikibase-SortedProperties}. Since the page name is set in the code, it is a constant variable. \\
-The code for the ordering is not merged yet, since it was decided to make it part of Wikibase instead of only being accessible only in the ArticlePlaceholder extension. That allows the possibility of reusing the code without having to build up a dependency from Wikibase to the ArticlePlaceholder extension. \\
+The collection of ordered property IDs is stored on one page in the \textit{MediaWiki namespace}. This namespace ``is used to hold system messages and other important content'' \citep{wiki:17}. It can be edited only by administrators. This page is called \texttt{\justify MediaWiki:Wikibase-SortedProperties}. Since the page name is set in the code, it is a constant variable. \\
+The code for the ordering is not merged yet, since it's supposed to become part of Wikibase instead of being accessible only in the ArticlePlaceholder extension. That allows the possibility of reusing the code without having to build up a dependency from Wikibase to the ArticlePlaceholder extension. \\
 \\
 For now, the page needs to exist on the local Wikipedia. If that's not the case, or if the page is empty or filled with non-text content, the corresponding exception is thrown. For that purpose the \texttt{\justify ArticlePlaceholderException} was created, which extends PHP's \texttt{\justify RuntimeException} to catch more specific exceptions and have more specific error handling. \\
 In the class \texttt{\justify PropertyOrderProvider} the page is parsed into a PHP array. In this array, the property IDs are the keys and the ordinal numbers the values. \\
