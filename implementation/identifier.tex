@@ -1,7 +1,7 @@
 \subsection{Identifier}
 
-To get a list of all external identifier in Wikidata, the item \textit{"Wikidata property representing a unique identifier" (Q19847637)}, is used. All properties representing an identifier are an \textit{"instance of" (P31)} this item. \\
-To query all those identifier Wikidata's SPARQL endpoint \footnote{\href{https://query.wikidata.org}{https://query.wikidata.org}} is used. The following query returns a list of IDs. This list can be downloaded as a file with the data in its JSON representation. \\
+To get a list of all external identifiers in Wikidata, the item \textit{"Wikidata property representing a unique identifier" (Q19847637)}, is used. All properties representing an identifier are an \textit{"instance of" (P31)} this item. \\
+To query all those identifiers, Wikidata's SPARQL endpoint \footnote{\href{https://query.wikidata.org}{https://query.wikidata.org}} is used. The following query returns a list of IDs. This list can be downloaded as a file with the data in its JSON representation. \\
 
 \begin{lstlisting}[frame=single] 
 PREFIX wd: <http://www.wikidata.org/entity/>
@@ -11,6 +11,9 @@ SELECT ?identifier WHERE {
    ?identifier  wdt:P31 wd:Q19847637 . 
 }
 \end{lstlisting}
-In the Lua script \texttt{\justify Main.lua} the script \texttt{\justify Identifier.lua} is generated from the JSON output. \\  \texttt{\justify Identifier.lua} returns a Lua table, which contains tables with the identifier mapped to "true" to be able to check with average \texttt{\justify O(1)} whether a property is an identifier or not. This script is included in the Lua module and is used to get access to the table with the identifier. It is static as it would cause too many requests to the SPARQL endpoint to check for every call to the special page again if the data on identifier changed. That implies that if something changes with the identifiers on Wikidata, or a new one is added, the ArticlePlaceholder doesn't immediately reflect that. \\
-This implementation was chosen due to the fact that the Wikidata team is working on a identifier data type, which would make the need for a Lua table with all identifiers superfluous. As soon as there is an identifier data type, the way of checking a property ID could be adjusted to check for the data type of the respective property. \\
-The code to create the list of identifiers is not part of the extension, only the created file \texttt{\justify Identifier.lua} is included in the extension in the path \path{ArticlePlaceholder/includes/Lua}. The source code for creating the list can be found on GitHub\footnote{\href{https://github.com/frimelle/identifier-to-lua}{https://github.com/frimelle/identifier-to-lua}}. 
+In the Lua script \texttt{\justify Main.lua} the script \texttt{\justify Identifier.lua} is generated from the JSON output. \\  \texttt{\justify Identifier.lua} returns a Lua table, which contains tables with the identifier mapped to "true" to be able to check with average \texttt{\justify O(1)} whether a property is an identifier or not. This script is included in the Lua module and is used to get access to the table with the identifier. It is static, as it would cause too many requests to the SPARQL endpoint to check for every call to the special page again if the data on the identifier changed. This means that if something changes with the identifiers on Wikidata, or a new one is added, the ArticlePlaceholder would not immediately reflect that. \\
+\\
+This implementation was chosen because there was no data type for identifiers in Wikidata while the extension was developed, but it was introduced and is deployed now. \\
+Until the data type was deployed, it was sufficient to have a static list of property IDs in the extension. This list includes all identifiers used in Wikidata, and will be exchanged with the proper handling of all statements with the identifier data type. The method for checking a property ID can be adjusted to check for the datatype of the respective property. \\
+\\
+The code to create the list of identifiers is not part of the extension, only the created file \texttt{\justify Identifier.lua} is included in the extension, in the path \path{ArticlePlaceholder/includes/Lua}. The source code for creating the list can be found on GitHub\footnote{\href{https://github.com/frimelle/identifier-to-lua}{https://github.com/frimelle/identifier-to-lua}}. 

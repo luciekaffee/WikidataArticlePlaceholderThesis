@@ -1,6 +1,6 @@
 \subsection{Renderer}
 
-Every part of an entity, or item in the case of the ArticlePlaceholder, needs a \textit{renderer} to be displayed. The renderer are written in Lua. They pull data from Wikidata and render it to HTML. They set CSS classes for the HTML elements in order to style them with the CSS module \texttt{\justify ext.articleplaceholder.defaultDisplay.css}. The HTML output of the module is displayed on the \texttt{\justify Special:AboutTopic} ArticlePlaceholder. \\
+Every part of an entity---or item in the case of the ArticlePlaceholder---needs a \textit{renderer} to be displayed. The renderers are written in Lua. They pull data from Wikidata and render it to HTML. They set CSS classes for the HTML elements, in order to style them with the CSS module \texttt{\justify ext.articleplaceholder.defaultDisplay.css}. The HTML output of the module is displayed on the \texttt{\justify Special:AboutTopic} ArticlePlaceholder. \\
 The MediaWiki conventions for naming Lua modules is 
 \begin{center}
 \texttt{\justify mw.ext.extensionName.moduleName} 
@@ -10,10 +10,10 @@ In order to match them, the default renderer for ArticlePlaceholders is called
 \texttt{\justify mw.ext.articlePlacholder.entityRenderer}
 \end{center}
 The entity renderer has getter and setter functions for individual renderers. Therefore every part of the display logic can be overwritten locally on Wikipedia. \\
-The Lua module on the Wikipedia is at \texttt{\justify Module:AboutTopic}, which is invoked by \texttt{\justify Template:AboutTopic}. On the entity renderer instance obtained a user with the appropriate rights can call the getter and setter functions. \\
-The renderer are as interchangeable as possible so that for example the \texttt{\justify snaksRenderer} can be used by the \texttt{\justify refererenceRenderer} as well as the \texttt{\justify qualifierRenderer}. The scopes of the renderer are therefore limited to their functionality. \\
-Wikibase provides a Scribunto interface with functions to access the repository. Wherever possible, the functions provided by this interface were used. This way, the description renderer for example simply wraps \texttt{\justify mw.wikibase.description}. The \texttt{\justify descriptionRenderer} of the ArticlePlacheolder's EntityRenderer is still needed as a seperate service since there must be a possibility for the user to overwrite the renderer. Additionally a CSS class is wrapped around the result of Wikibase's description renderer in order to style it properly. \\
-The EntityRenderer module itself takes the entity Id of an item an ArticlePlaceholder is created for. The Lua table for an entity is loaded in the \texttt{\justify renderEntity} function. This table represents the whole entity with all its respective data. Therefore it is performance-wise a very expensive operation. \\
+The Lua module on the Wikipedia is at \texttt{\justify Module:AboutTopic}, which is invoked by \texttt{\justify Template:AboutTopic}. On the entity renderer instance obtained, a user with the appropriate rights can call the getter and setter functions. \\
+The renderers are as interchangeable as possible, so that for example the \texttt{\justify snaksRenderer} can be used by the \texttt{\justify refererenceRenderer} as well as the \texttt{\justify qualifierRenderer}. The scopes of the renderers are therefore limited to their functionality. \\
+Wikibase provides a Scribunto interface with functions to access the repository. Wherever possible, the functions provided by this interface were used. This way, the description renderer for example simply wraps \texttt{\justify mw.wikibase.description}. The \texttt{\justify descriptionRenderer} of the ArticlePlacheolder's EntityRenderer is still needed as a separate service, since there must be a possibility for the user to overwrite the renderer. Additionally, a CSS class is wrapped around the result of Wikibase's description renderer in order to style it properly. \\
+The EntityRenderer module itself takes the entity Id of the item an ArticlePlaceholder is created for. The Lua table for an entity is loaded in the \texttt{\justify renderEntity} function. This table represents the whole entity with all its respective data. Therefore it is a very performance-costly operation. \\
 
 \begin{figure}[H]
 	\centering
