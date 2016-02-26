@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[11pt]{report} %[11pt,headings=optiontohead]{scrbook}
 
 \usepackage[natbibapa]{apacite}
 %\usepackage[utf8]{inputenc}
@@ -20,6 +20,13 @@
 \usepackage{lineno}
 \usepackage[onehalfspacing]{setspace}
 
+% Section Headers for the pages
+%\usepackage[fit]{truncate}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead[RO,LE]{\truncate{.95\headwidth}{\leftmark}}
+%\fancyfoot[C]{\thepage}
+
 \newcommand*\justify{%
   \fontdimen2\font=0.4em% interword space
   \fontdimen3\font=0.2em% interword stretch
@@ -33,12 +40,13 @@
 \date{}
 
 \begin {document}
-\linenumbers
+%\linenumbers
 \maketitle
 \newpage
 
 \chapter*{Dedication}
 \input{disclaimer}
+\chapter*{CC-BY-SA}
 \chapter*{Abstract}
 %\chapter*{Glossary}
 \newpage
