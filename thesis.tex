@@ -19,6 +19,7 @@
 \usepackage{pdfpages}
 \usepackage{lineno}
 \usepackage[onehalfspacing]{setspace}
+\usepackage{fancyhdr}
 
 % Section Headers for the pages
 %\usepackage[fit]{truncate}
@@ -35,18 +36,47 @@
   \hyphenchar\font=`\-% allowing hyphenation
 }
 
+\newenvironment{dedication}
+  {\clearpage           % we want a new page
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top 
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+
+\def\secondpage{\clearpage\null\vfill
+\pagestyle{empty}
+\begin{minipage}[b]{0.9\textwidth}
+\footnotesize\raggedright
+\setlength{\parskip}{0.5\baselineskip}
+\copyright 2016 by Lucie-Aim\'{e}e Kaffee. \\
+\textit{Generating Article Placeholders from Wikidata for Wikipedia: Increasing Access to Free and Open Knowledge} is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/4.0/}.
+\end{minipage}
+\vspace*{2\baselineskip}
+\cleardoublepage
+\rfoot{\thepage}}
+  
 \title{Generating Article Placeholders from Wikidata for Wikipedia:\\Increasing Access to Free and Open Knowledge}
 \author{Lucie-Aim\'{e}e Kaffee}
 \date{}
 
 \begin {document}
 %\linenumbers
-\maketitle
-\newpage
+\maketitle 
+\secondpage
 
-\chapter*{Dedication}
+\begin{dedication}
+ To Amaru and Laura \\
+ And my parents
+\end{dedication}
+
+%\chapter*{Dedication}
 \input{disclaimer}
-\chapter*{CC-BY-SA}
 \chapter*{Abstract}
 %\chapter*{Glossary}
 \newpage
