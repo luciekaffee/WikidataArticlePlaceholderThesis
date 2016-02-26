@@ -19,6 +19,7 @@
 \usepackage{pdfpages}
 \usepackage{lineno}
 \usepackage[onehalfspacing]{setspace}
+\usepackage[toc,page]{appendix}
 \usepackage{fancyhdr}
 
 % Section Headers for the pages
@@ -91,7 +92,12 @@
 \newpage
 \input{implementation/implementation}
 \input{conclusion}
+
+\chapter*{Acknowledgment}
+
+\begin{appendix}
 \input{appendix/appendix}
+\end{appendix}
 
 \bibliographystyle{apacite}
 \bibliography{references}
