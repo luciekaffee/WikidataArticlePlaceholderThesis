@@ -4,46 +4,8 @@ Adding new components to a software package requires, according to \citet{deploy
 \\
 To deploy the ArticlePlaceholder extension to Wikipedia, coordination with Wikimedia staff and volunteers was needed. \\
 In Wikimedia, people with appropriate rights, volunteers and staff, can deploy. They have a schedule, which can be adjusted to an extension author's needs. Since the author does not have deployment rights on the Wikimedia cluster, cooperation with Wikimedia staff was necessary in order to perform the steps described in Figure~\ref{fig:deployTimeline}, which describes the deployment process. \\
-\begin{sidewaysfigure}
-	\todo[inline]{look into this more!}
-	\begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
-		% draw horizontal line   
-		\draw (0,0) -- (2,0);
-		\draw[snake] (2,0) -- (4,0);
-		\draw (4,0) -- (5,0);
-		\draw[snake] (5,0) -- (7,0);
-		\draw (7,0) -- (9,0);
-		\draw[snake] (9,0) -- (11,0);
-		\draw (11,0) -- (13,0);
-		\draw[snake] (13,0) -- (15,0);
-		\draw (15,0) -- (17,0);
-		\draw[snake] (17,0) -- (19,0);
-		\draw (19,0) -- (19.5,0);
-		
 
-		% draw vertical lines
-		\foreach \x in {0,1.5,4.5,7.5,10.5,13.5,16.5,19.5}
-			\draw (\x cm,3pt) -- (\x cm,-3pt);
-
-		% draw nodes
-		\draw (0,0) node[below=3pt] {} node[above=3pt] {$   $};
-		\draw (1.5,0) node[below=3pt] {\small test system} node[above=3pt] {};
-		\draw (3,0) node[below=3pt] {} node[above=3pt] {\small security review};
-		\draw (4.5,0) node[below=3pt] {\small beta Wikipedia} node[above=3pt] {};
-		\draw (6,0) node[below=3pt] {} node[above=3pt] {\small feedback};
-		\draw (7.5,0) node[below=3pt] {\small test Wikipedia} node[above=3pt] {};
-		\draw (9,0) node[below=3pt] {} node[above=3pt] {\small feedback};
-		\draw (10.5,0) node[below=3pt] {\small beta feature 1} node[above=3pt] {};
-		\draw (12,0) node[below=3pt] {} node[above=3pt] {\small feedback};
-		\draw (13.5,0) node[below=3pt] {\small beta feature 2} node[above=3pt] {};
-		\draw (15,0) node[below=3pt] {} node[above=3pt] {\small feedback};
-		\draw (16.5,0) node[below=3pt] {\small enable on 1st WP} node[above=3pt] {};
-		\draw (18,0) node[below=3pt] {} node[above=3pt] {\small more Wikipedias};
-		\draw (19.5,0) node[below=3pt] {\small sister projects} node[above=3pt] {};
-	\end{tikzpicture}
-    \caption{Time line of ArticlePlaceholder deployment}
-    \label{fig:deployTimeline}
-\end{sidewaysfigure}
+\input{diagrams/deployment-timeline}
 
 \paragraph{Test system} ~\\
 From the beginning there was a test setup available on Wikimedia Labs\footnote{\url{articleplaceholder.wmflabs.org/mediawiki}}. Wikimedia Labs is ``the Wikimedia Foundation (WMF)'s cloud computing environment for developing software for the Foundation's operations. It also hosts bots and tools maintained and used by the community to maintain the [F]oundation's projects'' \citep{wiki:03}.

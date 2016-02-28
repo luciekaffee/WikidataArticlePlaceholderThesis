@@ -1,0 +1,40 @@
+\begin{sidewaysfigure}
+	%\todo[inline]{look into this more!}
+	\begin{tikzpicture}[snake=zigzag, line before snake = 5mm, line after snake = 5mm]
+		% draw horizontal line   
+		\draw (0,0) -- (2,0);
+		\draw[snake] (2,0) -- (4,0);
+		\draw (4,0) -- (5,0);
+		\draw[snake] (5,0) -- (7,0);
+		\draw (7,0) -- (8,0);
+		\draw[snake] (8,0) -- (10,0);
+		\draw (10,0) -- (11,0);
+		\draw[snake] (11,0) -- (13,0);
+		\draw (13,0) -- (14,0);
+		\draw[snake] (14,0) -- (16,0);
+		\draw (16,0) -- (19.5,0);
+		
+
+		% draw vertical lines
+		\foreach \x in {0,1.5,4.5,7.5,10.5,13.5,16.5,18,19.5}
+			\draw (\x cm,3pt) -- (\x cm,-3pt);
+
+		% draw nodes
+		\draw (0,0) node[below=3pt] {} node[above=3pt] {$   $};
+		\draw (1.5,0) node[below=3pt] {\small test system} node[above=3pt] {};
+		\draw (3,0) node[below=3pt] {} node[above=3pt] {\small security review};
+		\draw (4.5,0) node[below=3pt] {\small beta Wikipedia} node[above=3pt] {};
+		\draw (6,0) node[below=3pt] {} node[above=3pt] {\small feedback};
+		\draw (7.5,0) node[below=3pt] {\small test Wikipedia} node[above=3pt] {};
+		\draw (9,0) node[below=3pt] {} node[above=3pt] {\small feedback};
+		\draw (10.5,0) node[below=3pt] {\small beta feature 1} node[above=3pt] {};
+		\draw (12,0) node[below=3pt] {} node[above=3pt] {\small feedback};
+		\draw (13.5,0) node[below=3pt] {\small beta feature 2} node[above=3pt] {};
+		\draw (15,0) node[below=3pt] {} node[above=3pt] {\small feedback};
+		\draw (16.5,0) node[below=3pt] {\scriptsize enable on first WP} node[above=3pt] {};
+		\draw (18,0) node[below=3pt] {} node[above=3pt] {\small more Wikipedias};
+		\draw (19.5,0) node[below=3pt] {\small sister projects} node[above=3pt] {};
+	\end{tikzpicture}
+    \caption{Time line of ArticlePlaceholder deployment}
+    \label{fig:deployTimeline}
+\end{sidewaysfigure}
