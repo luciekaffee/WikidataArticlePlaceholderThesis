@@ -83,6 +83,8 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{pdfpages}
 \usepackage{lineno}
 
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
@@ -236,7 +238,7 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
 
-The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
+\input{acknowledgement}
 
 \end{acknowledgements}
 

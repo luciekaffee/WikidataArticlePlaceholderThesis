@@ -5,7 +5,7 @@ The tests for each class are named according to the class names with the suffix 
 \begin{quote}
  ``When we are writing a test in which we cannot (or choose not to) use a real depended-on component (DOC), we can replace it with a \textit{Test Double}. The \textit{Test Double} doesn't have to behave exactly like the real DOC; it merely has to provide the same API as the real one so that the SUT [system under test] \textit{thinks} it is the real one'' states \citet{testing}. 
 \end{quote}
-PHPUnit provides the possibility to create so called \textit{mocks} as test doubles. In the test class \texttt{SearchHookHandlerTest}, for example, the SpecialPage \texttt{SpecialSearch} is mocked to work on a test double. \\
+PHPUnit provides the option to create so called \textit{mocks} as test doubles. In the test class \texttt{SearchHookHandlerTest}, for example, the SpecialPage \texttt{SpecialSearch} is mocked to work on a test double. \\
 PHPUnit allows using data providers. Those data providers return an array of arrays, which provide data for a test method. This way, one method can test several different cases with multiple datasets. The arrays can contain a message explaining what the test is about, a parameter passed to the tested method, and the expected value returned. \\
-Each test method can contain one or more assertion. Those might test whether the result of the tested function equals the expected value. 
+Each test method can contain one or more assertion. Those are able to test whether the result of the tested function equals the expected value. 
 

@@ -1,6 +1,6 @@
 \section{Including PHP in Lua}\label{including-lua}
 
-To pass the return values of PHP functions to Lua, functionality provided by Scribunto was used. \\
+To pass the return values of PHP functions to Lua, Scribunto provided functionality is used. \\
 The functions accessible by the Lua code are declared in the class \texttt{\justify Scribunto\char`_LuaArticlePlaceholderLibrary}. This class extends \texttt{\justify Scribunto\char`_LuaLibraryBase} to register the Lua interface. \\
 To get the image property set in \texttt{\justify LocalSettings.php}, the global variable \texttt{\justify \$wgArticlePlaceholderImageProperty} is wrapped in an array and returned in the function \texttt{\justify getImageProperty()}. Lua functions can have multiple return values \citep{luabook:01}, thus Scribunto needs an array to model that. \\
 In Lua, these PHP callbacks are copied from \texttt{\justify mw\char`_interface} to the local variable \texttt{php}. From this variable the PHP functions in \texttt{\justify Scribunto\char`_LuaArticlePlaceholderLibrary} can be invoked. Therefore the image property ID can now be used in Lua as well, by invoking \texttt{\justify getImageProperty()} in \texttt{\justify mw.ext.articleplaceholder.entityRenderer}. \\

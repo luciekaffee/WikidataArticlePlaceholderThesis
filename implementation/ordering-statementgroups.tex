@@ -1,13 +1,13 @@
 \section{Ordering of statement groups}\label{ordering-stat}
 
 To find a technical solution to this problem, there was a "Request for comment" page set up \citep{wiki:24}. \\
-
-The collection of ordered property IDs is stored on one page in the \textit{MediaWiki namespace}. This namespace ``is used to hold system messages and other important content'' \citep{wiki:17}. It can be edited only by administrators. This page is called \texttt{\justify MediaWiki:Wikibase-SortedProperties}. Since the page name is set in the code, it is a constant variable. \\
-The code for the ordering is not merged yet, since it's supposed to become part of Wikibase instead of being accessible only in the ArticlePlaceholder extension. That allows the possibility of reusing the code without having to build up a dependency from Wikibase to the ArticlePlaceholder extension. \\
 \\
-For now, the page needs to exist on the local Wikipedia. If that's not the case, or if the page is empty or filled with non-text content, the corresponding exception is thrown. For that purpose the \texttt{\justify ArticlePlaceholderException} was created, which extends PHP's \texttt{\justify RuntimeException} to catch more specific exceptions and have more specific error handling. \\
+The collection of ordered property IDs is stored on one page in the \textit{MediaWiki namespace}. This namespace ``is used to hold system messages and other important content'' \citep{wiki:17}. It can be edited only by administrators. This page is called \texttt{\justify MediaWiki:Wikibase-SortedProperties}. Since the page name is set in the code, it is a constant variable. \\
+The code for the ordering is not merged yet, since it's supposed to become part of Wikibase instead of being accessible only in the ArticlePlaceholder extension. That allows the possibility of reusing the code without having to build up a dependency from Wikibase to the  extension. \\
+\\
+For now, the page has to be on the local Wikipedia. If that's not the case, or if the page is empty or filled with non-text content, the corresponding exception is thrown. For that purpose the \texttt{\justify ArticlePlaceholderException} was created, which extends PHP's \texttt{\justify RuntimeException} to catch more specific exceptions and allow for more specific error handling. \\
 In the class \texttt{\justify PropertyOrderProvider} the page is parsed into a PHP array. In this array, the property IDs are the keys and the ordinal numbers the values. \\
-
+\\
 To get the content of the page, the MediaWiki function \texttt{\justify getNativeData()} is used. This page content is parsed in the function \texttt{\justify parseList( \$pageContent )}. To remove all comments in the HTML multiple line comment style, the following regular expression is used.
 \begin{lstlisting}[frame=single]
 @<!--.*?-->@s
@@ -18,6 +18,8 @@ After removing all comments, all Strings matching the following regular expressi
 @^\*\s*([Pp]\d+)@m
 \end{lstlisting}
 This regular expression matches all strings containing an asterisk, optional whitespace, and a upper or lower case \textit{P} followed by a number.
-The array is flipped, to have the properties as keys. This is important when it comes to using the array in Lua. It is not used in the \texttt{\justify mw.ext.articlePlaceholder. entityRenderer.lua} module yet, but will be in the future. It will be called in a similar way to the image property ID. Then as it is done now with the property IDs in the case of the identifiers, every property ID contained in an item can be compared and ordered according to the ordinal number of the array. \todo{better explanation} After the sorting is executed, it is very easy to limit the number of statements, since less important statements can be identified accordingly to their ordinal number. \\
+The array is flipped, to have the properties as keys. This is important when it comes to using the array in Lua. It is not used in the \texttt{\justify mw.ext.articlePlaceholder.entityRenderer.lua} module yet, but will be in the future. \\
 An instance of the class is created in the \texttt{\justify ArticlePlaceholderServices}. \\
-In the class \texttt{\justify Scribunto\_LuaArticlePlaceholderLibrary} in the \texttt{\justify ArticlePlaceholder\textbackslash{}Lua} namespace with the help of \texttt{\justify ArticlePlaceholderServices} the array with the property order is returned in the function \texttt{\justify getPropertyOrder}, which then can be called in the Lua module. This is explained in more detail in the Chapter \ref{including-lua}: \nameref{including-lua}.
+In the class \texttt{\justify Scribunto\_LuaArticlePlaceholderLibrary} in the \texttt{\justify ArticlePlaceholder\textbackslash{}Lua} namespace with the help of \texttt{\justify ArticlePlaceholderServices} the array with the property order is returned in the function \texttt{\justify getPropertyOrder()}, which then can be called in the Lua module. This is explained in further detail in the following Chapter \ref{including-lua}: \nameref{including-lua}. \\
+In \texttt{\justify mw.ext.articlePlaceholder.entityRenderer.lua} the property IDs of the item will be ordered according to the ordinal numbers of the sorted array. \\ 
+After the sorting is executed, it is quite easy to limit the number of statements, since less important statements can be identified by their ordinal number.
