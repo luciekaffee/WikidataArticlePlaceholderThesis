@@ -390,16 +390,16 @@ KOMA-script documentation for details.}]{fancyhdr}
 %----------------------------------------------------------------------------------------
 
 \ifbool{hyperrefsupport}{% If the nohyperref class option has not been specified
-\AfterPackage{biblatex}{ % Load the hyperref package after the biblatex package for compatibility 
+\AfterPackage{apacite}{ % Load the hyperref package after the biblatex package for compatibility 
 \RequirePackage{hyperref} % Required for customising links and the PDF
 \hypersetup{pdfpagemode={UseOutlines},
 bookmarksopen=true,
 bookmarksopenlevel=0,
 hypertexnames=false,
 colorlinks=true, % Set to false to disable coloring links
-citecolor=magenta, % The color of citations
-linkcolor=ForestGreen, % The color of references to document elements (sections, figures, etc)
-urlcolor=magenta, % The color of hyperlinks (URLs)
+citecolor=black, % The color of citations
+linkcolor=black, % The color of references to document elements (sections, figures, etc)
+urlcolor=black, % The color of hyperlinks (URLs)
 pdfstartview={FitV},
 unicode,
 breaklinks=true,

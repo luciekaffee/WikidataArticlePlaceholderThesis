@@ -51,7 +51,6 @@ As described in figure~\ref{fig:CircleSearch} a problem of the small Wikipedia p
 Making ArticlePlaceholder accessible for search engines will be an important point in the following development of the extension. 
 
 \subsection{Red links}
-\todo[inline]{Requirements klarer machen}
 \begin{quotation}
 ``A red link (...) signifies a link to a page that is either non-existent or deleted.'' \citep{wiki:01} 
 \end{quotation}
@@ -81,7 +80,8 @@ This list is then used to order and filter the statements on each ArticlePlaceho
 Identifiers are IDs used for an entity in other ontologies. For the reader to be able to conveniently look up more information on sites other than Wikimedia projects, identifiers need to be distinguishable from other statements also in the layout, and always show up on the ArticlePlaceholder. To always be displayed, they should not be included in the list of ordered statements. 
 
 \section{Caching}
-Since the generated content pages will be accessed frequently, \todo{numbers: WP page views per day} it will be necessary to implement some form of caching for them. With caching it would be possible to limit the amount of requests to Wikidata services too, which will show an improvement in the performance. This is not part of this thesis.
+Since the generated content pages will be accessed frequently, it will be necessary to implement some form of caching for them. In Figure~\ref{fig:pageviews} is an example for the page views per day of the English Wikipedia's \textit{MainPage} to emphasize how urgent the need for caching will be. \\
+With caching it would be possible to limit the amount of requests to Wikidata services too, which will show an improvement in the performance. This is not part of this thesis.
 
 \section {Unit tests}
 It is especially important for the main code in PHP to be covered completely by automated testing, especially by unit tests. \\
