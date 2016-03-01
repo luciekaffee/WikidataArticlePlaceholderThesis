@@ -18,7 +18,7 @@ After removing all comments, all Strings matching the following regular expressi
 @^\*\s*([Pp]\d+)@m
 \end{lstlisting}
 This regular expression matches all strings containing an asterisk, optional whitespace, and a upper or lower case \textit{P} followed by a number.
-The array is flipped, to have the properties as keys. This is important when it comes to using the array in Lua. It is not used in the \texttt{\justify mw.ext.articlePlaceholder.entityRenderer.lua} module yet, but will be in the future. \\
+The array is flipped, to have the properties as keys. This is important when it comes to using the array in Lua. It is not used in the \texttt{\justify mw.ext.articlePlaceholder. entityRenderer.lua} module yet, but will be in the future. \\
 An instance of the class is created in the \texttt{\justify ArticlePlaceholderServices}. \\
 In the class \texttt{\justify Scribunto\_LuaArticlePlaceholderLibrary} in the \texttt{\justify ArticlePlaceholder\textbackslash{}Lua} namespace with the help of \texttt{\justify ArticlePlaceholderServices} the array with the property order is returned in the function \texttt{\justify getPropertyOrder()}, which then can be called in the Lua module. This is explained in further detail in the following Chapter \ref{including-lua}: \nameref{including-lua}. \\
 In \texttt{\justify mw.ext.articlePlaceholder.entityRenderer.lua} the property IDs of the item will be ordered according to the ordinal numbers of the sorted array. \\ 

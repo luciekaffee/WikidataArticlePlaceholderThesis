@@ -1,5 +1,134 @@
-\begin{lstlisting}[frame=single]
-The following code was developed in cooperation with the Wikidata team and volunteers. \\
-The following people contributed to the code as shown below:
-Marius Hoch, ...
-\end{lstlisting}
+\chapter{Code}
+The following source code was developed in cooperation with the Wikidata team and volunteers. \\
+Even though most of it was written by myself, other people contributed to it. It is published under the license \textbf{GNU General Public License 2.0 or later}. \\
+The following people contributed to the source code of the ArticlePlaceholder extension: \\
+Christian Aistleitner, Daniel Kinzler, IoannisKydonis, Jan Zerebecki, Kunal Mehta, Marius Hoch, paladox and Thiemo M\"attig.
+
+
+\setboolean{@twoside}{true}
+
+\chapter{ArticlePlaceholder.php}
+\lstset{
+  language        = php,
+  basicstyle      = \scriptsize\ttfamily,
+  keywordstyle    = \color{dkblue},
+  stringstyle     = \color{red},
+  identifierstyle = \color{dkgreen},
+  commentstyle    = \color{gray},
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else},
+  emphstyle       =[2]\color{dkyellow},
+  numbers		  = left,
+  numberstyle=\scriptsize,
+  numbersep=9pt,
+  literate 		  = {é}{{\'e}}1}
+%\lstset{numbers=left, frame=single, language=php}
+\lstinputlisting{appendix/code/ArticlePlaceholder.php}
+
+\chapter{SpecialAboutTopic.php}
+\lstinputlisting{appendix/code/Specials/SpecialAboutTopic.php}
+
+\chapter{mw.ext.articlePlaceholder. entityRenderer.lua}
+\lstset{
+  language        = {[5.2]Lua},
+  basicstyle      = \scriptsize\ttfamily,
+  keywordstyle    = \color{dkblue},
+  stringstyle     = \color{red},
+  identifierstyle = \color{dkgreen},
+  commentstyle    = \color{gray},
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else},
+  emphstyle       =[2]\color{dkyellow},
+  numbers		  = left,
+  numberstyle=\scriptsize,
+  numbersep=9pt,
+  literate 		  = {é}{{\'e}}1}
+\lstinputlisting{appendix/code/includes/Lua/mw.ext.articlePlaceholder.entityRenderer.lua}
+
+\chapter{Main.lua for identifier to lua}
+\lstinputlisting{appendix/code/includes/Lua/Main.lua}
+
+\chapter{ext.articleplaceholder. createArticle.js}
+\lstset{
+   language=JavaScript,
+   extendedchars=true,
+   basicstyle=\scriptsize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\scriptsize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b,
+   literate 		  = {é}{{\'e}}1
+}
+\lstinputlisting{appendix/code/modules/ext.articleplaceholder.createArticle.js}
+
+\chapter{ext.articleplaceholder. defaultDisplay.css}
+\lstset{
+   language=JavaScript,
+   extendedchars=true,
+   basicstyle=\scriptsize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\scriptsize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b,
+   literate 		  = {é}{{\'e}}1
+}
+\lstinputlisting{appendix/code/modules/ext.articleplaceholder.defaultDisplay.css}
+
+\chapter{ext.articleplaceholder. defaultDisplaySmall.css}
+\lstinputlisting{appendix/code/modules/ext.articleplaceholder.defaultDisplaySmall.css}
+
+\chapter{SearchHookHandler.php}
+\lstset{
+  language        = php,
+  basicstyle      = \scriptsize\ttfamily,
+  keywordstyle    = \color{dkblue},
+  stringstyle     = \color{red},
+  identifierstyle = \color{dkgreen},
+  commentstyle    = \color{gray},
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else},
+  emphstyle       =[2]\color{dkyellow},
+  numbers		  = left,
+  numberstyle=\scriptsize,
+  numbersep=9pt,
+  literate 		  = {é}{{\'e}}1 }
+\lstinputlisting{appendix/code/includes/SearchHookHandler.php}
+
+\chapter{SearchHookHandlerTest.php}
+\lstinputlisting{appendix/code/tests/SearchHookHandlerTest.php}
+
+\chapter{PropertyOrderProvider.php}
+\lstinputlisting{appendix/code/includes/PropertyOrderProvider.php}
+
+\chapter{PropertyOrderProviderTest.php}
+\lstinputlisting{appendix/code/tests/PropertyOrderProviderTest.php}
+
+\chapter{Hooks.php}
+\lstinputlisting{appendix/code/includes/Hooks.php}
+
+\chapter{ArticlePlaceholderException.php}
+\lstinputlisting{appendix/code/includes/Exception/ArticlePlaceholderException.php}
+
+\chapter{ArticlePlaceholderServices.php}
+\lstinputlisting{appendix/code/includes/ArticlePlaceholderServices.php}
+
+\chapter{Scribunto\char`_LuaArticle PlaceholderLibrary.php}
+\lstinputlisting{appendix/code/includes/Lua/Scribunto_LuaArticlePlaceholderLibrary.php}
+
+\chapter{qqq.json}
+\lstinputlisting{appendix/code/i18n/qqq.json}
+
+\setboolean{@twoside}{false}

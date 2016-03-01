@@ -1,0 +1,58 @@
+.articleplaceholder-statementgroup {
+  display: inline-block;
+  border: 1px solid #AAA;
+  vertical-align: top;
+  padding: 10px;
+  margin: 20px;
+  width: 350px;
+}
+
+#bodyContent {
+  padding-top: 5%;
+  padding-right: 305px;
+}
+
+#create-article-button {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+
+.articleplaceholder-sidebar {
+  position: absolute;
+  right: 0px;
+  width: 310px;
+}
+
+.articleplaceholder-topimage {
+  float: right;
+}
+
+.articleplaceholder-identifierlist {
+  clear: both;
+  border-collapse: collapse;
+  border: 1px solid black;
+  background-color: #F9F9F9;
+  width: 100%;
+}
+
+.articleplaceholder-identifierlist .articleplaceholder-value {
+ font-size: 100%;
+ margin-left: 1.5em;
+}
+
+.articleplaceholder-statementgrouplist {
+  margin-top: 5%;
+}
+
+.articleplaceholder-statement {
+  margin-top: 1.5em;
+}
+
+.articleplaceholder-value {
+  font-size: 130%;
+}
+
+.articleplaceholder-qualifier {
+  text-indent: 1em;
+}
