@@ -7,11 +7,11 @@ Infoboxes are fixed-format tables on (in case of left to right languages) the to
 It is important to consider how infoboxes work and differentiate the layout of the ArticlePlaceholder from theirs to avoid confusing the two features.
 
 \section{Reasonator}
-Reasonator \footnote{\url{https://tools.wmflabs.org/reasonator/}} is a visualization of Wikidata items. It is written mostly in JavaScript and has a very similar approach to the ArticlePlaceholder extension. It displays items from Wikidata in a visually appealing way, aimed at readers rather than at Wikidata editors. Reasonator does not stick to the typical Wikipedia layout but tries to find the best way possible to display the data. \\
-Where appropriate, the items are separated into the classes  "people, locations, [and] species" according to \citet{wiki:06}. Therefore it is possible to display the data in a way that is context sensitive. \\
+Reasonator \footnote{\url{https://tools.wmflabs.org/reasonator/}} is a visualization of Wikidata items. It is written mostly in JavaScript and has a very similar approach to the ArticlePlaceholder extension. It displays items from Wikidata in a visually appealing way, aimed at readers rather than at Wikidata editors. Reasonator does not stick to the typical Wikipedia layout, but tries to find the best way possible to display the data. \\
+Where appropriate, the items are separated into the classes  "people, locations, [and] species" according to \citet{wiki:06}. Therefore it is possible to display the data in a way that is context-sensitive. \\
 
 \section{Lsjbot}
-In exceptional cases, the number of articles on a Wikipedia stands in no relation to the number of editors or speakers of the Wikipedia's language. This is especially interesting when looking at Swedish--- a language with only 10.5 million speakers worldwide as \citet{nlpd:01} states. The Swedish Wikipedia is the second largest Wikipedia in number of articles. As of 15.01.2016 the vast majority (56.3\%) of these articles are about taxons.
+In exceptional cases, the number of articles on a Wikipedia stands in no relation to the number of editors or speakers of the Wikipedia's language. This is especially interesting when looking at Swedish, a language with only 10.5 million speakers worldwide as \citet{nlpd:01} states. The Swedish Wikipedia is the second largest Wikipedia in number of articles. As of 15.01.2016 the vast majority (56.3\%) of these articles are about taxons.
 In the Cebuano Wikipedia this is even more pronounced. It has the third most articles of all Wikipedias. \citep{wiki:07} \\
 \\
 Cebuano is spoken in the Philippines. Cebuano speakers account for up 24\% of the country's population. \citep{cebuano:01} They are the second largest ethnolinguistic group of the Philippines with 18.5 million people \citep{cebuano:02}. \\
@@ -25,7 +25,7 @@ Looking at Lsjbot, the goal for the ArticlePlaceholder was to centralize the dat
 \section{Wdsearch.js}
 Wdsearch.js\footnote{\url{https://en.wikipedia.org/w/index.php?title=MediaWiki:Wdsearch.js&action=raw&ctype=text/javascript}} is a script that includes search results from Wikidata on the Wikipedia search page. It is written in JavaScript and enabled by default on Italian Wikipedia \citet{gerardm:01} states. \\
 The idea is to tackle the problem that according to \citet{manske:01} ``over 60\% of Wikidata items have no corresponding article in the English Wikipedia; once we leave the ``top five'', this exceeds 90\%.'' \\
-Using this script, search results from Wikidata are added to the bottom of the normal Wikipedia search result page. The label of the item contains a link to the Wikidata item. A short description gives the user an overview, to determine whether it is the topic they were looking for. The user can choose to read the topic on either a different Wikipedia, see multimedia content on Wikimedia Commons, or see data on Resonator, using three buttons. \\
+Using this script, search results from Wikidata are added to the bottom of the normal Wikipedia search result page. The label of the item contains a link to the Wikidata item. A short description gives the user an overview to determine whether it is the topic they were looking for. The user can choose to read the topic on a different Wikipedia, see multimedia content on Wikimedia Commons or see data on Resonator, using three buttons. \\
 \\
 The script helps users find more information on a topic they are looking for, but as of now, the user is forced to visit another website. Knowledge of how to navigate and use this other website is required. \\
 The idea of including Wikidata search results is something ArticlePlaceholders needs to incorporate.
