@@ -133,4 +133,38 @@ Christian Aistleitner, Daniel Kinzler, IoannisKydonis, Jan Zerebecki, Kunal Meht
 \section{qqq.json}
 \lstinputlisting{appendix/code/i18n/qqq.json}
 
+\section{Template:AboutTopic}
+\lstset{
+  language        = {[5.2]Lua},
+  basicstyle      = \scriptsize\ttfamily,
+  keywordstyle    = \textbf,
+  stringstyle     = \textit,
+  identifierstyle = \color{black},
+  commentstyle    = \color{gray},
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else},
+  emphstyle       =[2]\textbf,
+  numbers		  = left,
+  numberstyle=\scriptsize,
+  numbersep=9pt,
+  literate 		  = {é}{{\'e}}1}
+\begin{lstlisting}
+ {{#invoke:FancyUnicorn|showData|{{{1}}}}}
+\end{lstlisting}
+
+
+\section{Module:AboutTopic}
+\begin{lstlisting}
+ local p = {}
+
+-- get the label of the local entity
+p.showData = function(frame)
+ entityRenderer = require(  'mw.ext.articlePlaceholder.entityRenderer'  )
+ return entityRenderer.render( frame )
+end
+
+return p
+\end{lstlisting}
+
 \setboolean{@twoside}{false}

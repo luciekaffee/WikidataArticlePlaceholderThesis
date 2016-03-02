@@ -7,9 +7,9 @@
 		\caption{Class diagram of PHP classes}
 		\label{fig:ClassDiagramPHP}
 	\end{figure}
-	Therefore all parts that need services provided by MediaWiki or otherwise work with the functionality of MediaWiki must be written in PHP---such as the special page for users to create an ArticlePlaceholder as well as the integration in the search. \\
+	Therefore all parts that need services provided by MediaWiki or otherwise work with the functionality of MediaWiki must be written in PHP---such as the SpecialPage for users to create an ArticlePlaceholder as well as the integration in the search. \\
 	The ordering of statement groups is written mainly in PHP in order to be reusable---and even though it was developed for this extension, it will be part of the Wikibase code. It could have been implemented in Lua as well, but then it would have been useful almost solely for this extension. \\
-	The layout and display logic of the ArticlePlaceholder on the Wikipedia---the most important part from a user's perspective---has been implemented as a Lua module. This module is similar to libraries in other programming languages since it is overwritable by users with setter and getter functions. It is invoked from the special page via a Template (\texttt{\justify Template:AboutTopic}). The template calls the \texttt{\justify Module:AboutTopic}'s function \texttt{\justify showData}. The named template and module are on the respective language Wikipedia. \\
+	The layout and display logic of the ArticlePlaceholder on the Wikipedia---the most important part from a user's perspective---has been implemented as a Lua module. This module is similar to libraries in other programming languages since it is overwritable by users with setter and getter functions. It is invoked from the SpecialPage via a Template (\texttt{\justify Template:AboutTopic}). The template calls the \texttt{\justify Module:AboutTopic}'s function \texttt{\justify showData}. The named template and module are on the respective language Wikipedia. \\
 	\input{implementation/red-links}
 	\input{implementation/setting-up}
 	\input{implementation/special-page}
