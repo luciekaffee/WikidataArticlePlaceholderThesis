@@ -57,14 +57,18 @@ onehalfspacing, % Single line spacing, alternatives: onehalfspacing or doublespa
 headsepline, % Uncomment to get a line under the header
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
+\usepackage[natbibapa]{apacite}
+
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters 
 
 \usepackage{palatino} % Use the Palatino font by default
 
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+%\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
-\addbibresource{references.bib} % The filename of the bibliography
+
+
+%\addbibresource{references.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
@@ -354,7 +358,11 @@ The implementation of these requirements is the main part of the following thesi
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\printbibliography[heading=bibintoc]
+\addcontentsline{toc}{chapter}{Bibliography}
+\renewcommand\bibname{Bibliography}
+\bibliographystyle{apacite}
+\bibliography{references}
+%\printbibliography[heading=bibintoc]
 
 %----------------------------------------------------------------------------------------
 

@@ -61,6 +61,37 @@
 \vspace*{2\baselineskip}
 \cleardoublepage
 \rfoot{\thepage}}
+
+%Additional commands
+\lstset{basicstyle=\ttfamily,
+	breaklines=true,
+	%escapeinside={\%*}{*)},
+	%literate= {.}{}{1\discretionary{.}{}{.}} 
+	}
+
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+
+\definecolor{lightgray}{rgb}{.4,.4,.4}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
   
 \title{Generating Article Placeholders from Wikidata for Wikipedia:\\Increasing Access to Free and Open Knowledge}
 \author{Lucie-Aim\'{e}e Kaffee}
@@ -99,6 +130,8 @@
 \input{appendix/appendix}
 \end{appendix}
 
+\addcontentsline{toc}{chapter}{Bibliography}
+\renewcommand\bibname{Bibliography}
 \bibliographystyle{apacite}
 \bibliography{references}
 
