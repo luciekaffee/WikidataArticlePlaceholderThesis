@@ -57,8 +57,6 @@ onehalfspacing, % Single line spacing, alternatives: onehalfspacing or doublespa
 headsepline, % Uncomment to get a line under the header
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
-\usepackage[natbibapa]{apacite}
-
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters 
 
@@ -66,7 +64,7 @@ headsepline, % Uncomment to get a line under the header
 
 %\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
-
+\usepackage[natbibapa]{apacite}
 
 %\addbibresource{references.bib} % The filename of the bibliography
 
@@ -86,6 +84,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{microtype}
 \usepackage{pdfpages}
 \usepackage{lineno}
+\usepackage[titletoc,title]{appendix}
 %\usepackage{inconsolata}
 
 %Additional commands
@@ -343,17 +342,10 @@ The implementation of these requirements is the main part of the following thesi
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
 
-\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
-
+%\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+\begin{appendices}
 \input{appendix/appendix}
-
-% Include the appendices of the thesis as separate files from the Appendices folder
-% Uncomment the lines as you write the Appendices
-
-%\include{Appendices/AppendixA}
-%\include{Appendices/AppendixB}
-%\include{Appendices/AppendixC}
-
+\end{appendices}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
