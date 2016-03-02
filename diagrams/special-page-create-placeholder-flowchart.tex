@@ -29,18 +29,18 @@
     \path [line] (showContent) -- (itemIdParam);
     \path [line] (itemIdParam) -- (entityId);
     % \path [line] (entityId) -- (createForm);
-    \draw (entityId) -- (createForm) node [midway, above, sloped, -latex'] (textnode) {no};
+    \path [line] (entityId) -- (createForm) node [midway, above, sloped, -latex'] (textnode) {no};
     \path [line] (createForm) -- (Html);
-    \draw (entityId) -- (hasEntity) node [midway, above, sloped, -latex'] (textnode) {yes};
+    \path [line] (entityId) -- (hasEntity) node [midway, above, sloped, -latex'] (textnode) {yes};
     % \path [line] (entityId) -- (hasEntity);
-    \draw (hasEntity) -- (onWiki) node [midway, above, sloped, -latex'] (textnode) {yes};
+    \path [line] (hasEntity) -- (onWiki) node [midway, above, sloped, -latex'] (textnode) {yes};
     %\path [line] (hasEntity) -- (onWiki);
-    \draw (hasEntity) -- (error) node [midway, above, sloped, -latex'] (textnode) {no};
+    \path [line] (hasEntity) -- (error) node [midway, above, sloped, -latex'] (textnode) {no};
     % \path [line] (hasEntity) -- (error);
     \path [line] (error) -- (createForm);
-    \draw (onWiki) -- (redirect) node [midway, above, sloped, -latex'] (textnode) {yes};
+    \path [line] (onWiki) -- (redirect) node [midway, above, sloped, -latex'] (textnode) {yes};
     % \path [line] (onWiki) -- (redirect);
-    \draw (onWiki) -- (placeholder) node [midway, above, sloped, -latex'] (textnode) {no};
+    \path [line] (onWiki) -- (placeholder) node [midway, above, sloped, -latex'] (textnode) {no};
     % \path [line] (onWiki) -- (placeholder);
     % \path [line] (placeholder) -- (JS);
 \end{tikzpicture}
